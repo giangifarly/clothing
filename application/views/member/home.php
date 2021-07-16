@@ -1,56 +1,4 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html style="font-size: 16px;">
-
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="page_type" content="np-template-header-footer-from-plugin">
-
-	<title>HOME</title>
-
-	
-	<link rel="stylesheet" href="<?php echo base_url('assets/css') ?>/HOME.css" media="screen">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css') ?>/nicepage.css" media="screen">
-
-	<script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/jquery.js" defer=""></script>
-	<script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/nicepage.js" defer=""></script>
-
-	<meta name="generator" content="Nicepage 3.19.4, nicepage.com">
-
-	<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-	<link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
-
-
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "Organization",
-			"name": "",
-			"logo": "images/xcvxcv.png",
-			"sameAs": [
-				"https://facebook.com/name",
-				"https://twitter.com/name",
-				"https://instagram.com/name"
-			]
-		}
-	</script>
-
-	<meta name="theme-color" content="#478ac9">
-	<meta name="twitter:site" content="@">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="HOME">
-	<meta name="twitter:description" content="">
-	<meta property="og:title" content="HOME">
-	<meta property="og:type" content="website">
-</head>
-
-<body data-home-page="HOME.html" data-home-page-title="HOME" class="u-body u-overlap">
+<title>HOME</title>
 	<header class="u-clearfix u-header u-sticky u-header" id="sec-ab77">
 		<nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
 			<div class="menu-collapse">
@@ -70,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</a>
 			</div>
 
-			<?php include 'dynamic/pages.php' ?>
+			<?php include 'dinamis/pages.php' ?>
 		</nav><a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
 			<img src="<?php echo base_url('assets') ?>/images/xcvxcv.png" class="u-logo-image u-logo-image-1" data-image-width="64">
 		</a>
