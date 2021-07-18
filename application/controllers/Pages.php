@@ -28,9 +28,14 @@ class Pages extends CI_Controller {
 		$this->load->view('shop');
 		$this->load->view('dynamic/footer');
 	}
-	public function event()
+	public function event1()
 	{
-		$this->load->view('event');
+		$this->load->view('event1');
+		$this->load->view('dynamic/footer');
+	}
+	public function store()
+	{
+		$this->load->view('store');
 		$this->load->view('dynamic/footer');
 	}
 	public function login()
