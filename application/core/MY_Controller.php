@@ -10,10 +10,12 @@ class MY_Controller extends CI_Controller
 
 		$data['error'] 					= '';
 		$data['username'] 				= $this->session->userdata('username');
+		
+		$data['list_produk']			= $this->m_product->list_product()->result();
 
-		$data['header'] 				= $this->load->view('admin/pager/sidebar');
+		$data['header'] 				= $this->load->view('admin/pager/sidebar',$data);
 		$data['content'] 				= $this->load->view($content, $data);
-		$data['footer']					= $this->load->view('admin/pager/footer');
+		$data['footer']					= $this->load->view('admin/pager/footer',$data);
 
 
 		$this->load->view('admin/index', $data);

@@ -66,8 +66,8 @@ class Admin_pages extends MY_Controller
 					<td>' . $row->kategori . '</td>
 					<td>' . $row->harga . '</td>
 					<td></td>
-					<td>' . anchor('admin/edit_sekolah/' . $row->id_sekolah, 'Edit') . '</td>
-					<td>' . anchor('admin/hapus_akun/' . $row->id_sekolah, 'Hapus') . '</td>
+					<td>' . anchor('admin/edit_sekolah/' . $row->id, 'Edit') . '</td>
+					<td>' . anchor('admin/hapus_akun/' . $row->id, 'Hapus') . '</td>
 				</tr>
 			   ';
 				$no++;
