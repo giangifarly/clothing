@@ -28,11 +28,18 @@ class Pages extends CI_Controller {
 		$this->load->view('shop');
 		$this->load->view('dynamic/footer');
 	}
-	public function event1()
+	public function event()
 	{
-		$this->load->view('event1');
+		$this->load->view('event');
 		$this->load->view('dynamic/footer');
 	}
+
+	public function description()
+	{
+		$this->load->view('description');
+		$this->load->view('dynamic/footer');
+	}
+
 	public function store()
 	{
 		$this->load->view('store');

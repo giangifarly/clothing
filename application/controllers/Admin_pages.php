@@ -80,4 +80,42 @@ class Admin_pages extends MY_Controller
 		$output .= '</table>';
 		echo $output;
 	}
+
+	public function tambah_sekolah()
+	{
+		$data['judul1'] = 'Tambah Sekolah';
+		
+		$jenis_pendidikan	= $this->input->post('jenis_pendidikan');
+		$status_sekolah		= $this->input->post('status_sekolah');
+		$urutan				= $this->input->post('urutan');
+		$instansi			= $this->input->post('instansi');
+		$alamat_sekolah 	= $this->input->post('alamat_sekolah');
+		$email_sekolah		= $this->input->post('email_sekolah');
+		$telp_sekolah		= $this->input->post('telp_sekolah');
+
+		if ($urutan == 0) {
+			$urutan = null;
+		}
+
+		$this->form_validation->set_rules('instansi', 'Nama Instansi/Wilayah/Kota', 'trim|required');
+
+		if ($this->form_validation->run() == false) {
+			$this->render_admin('admin/tambah_sekolah', $data);
+		} else {
+			$sekolah = array(
+				'jenis_pendidikan'	=> $jenis_pendidikan,
+				'status_sekolah' 	=> $status_sekolah,
+				'urutan' 			=> $urutan,
+				'instansi' 			=> $instansi,
+				'alamat_sekolah'	=> $alamat_sekolah,
+				'email_sekolah'		=> $email_sekolah,
+				'telp_sekolah'		=> $telp_sekolah,
+			);
+
+			$this->data_model->insertSekolah($sekolah);
+
+			redirect('admin/tambah_sekolah');
+			redirect('admin/list_sekolah');
+		}
+	}
 }

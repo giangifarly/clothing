@@ -161,7 +161,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="u-repeater u-repeater-1">
 					<div class="u-align-left u-container-style u-list-item u-repeater-item">
 						<div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-							<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/adjure-1.jpg" data-href="EVENT.html" data-page-id="133031349">
+							<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/adjure-1.jpg" data-href="<?php echo site_url('pages/description') ?>" data-page-id="133031349">
 							<h3 class="u-text u-text-2">Adjure</h3>
 							<h5 class="u-text u-text-3">Rp.169.000</h5>
 						</div>

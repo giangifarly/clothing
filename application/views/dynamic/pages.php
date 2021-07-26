@@ -8,7 +8,7 @@
 		</li>
 		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/shop') ?>">SHOP</a>
 		</li>
-		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/event1') ?>">EVENT</a>
+		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/event') ?>">EVENT</a>
 		</li>
 		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/store') ?>">STORE</a>
 		</li>
@@ -16,6 +16,7 @@
 		</li>
 		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/login') ?>"><button class="btn btn-dark">LOG IN</button></a>
 		</li>
+
 	</ul>
 </div>
 <div class="u-custom-menu u-nav-container-collapse">
@@ -27,7 +28,7 @@
 				</li>
 				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/shop') ?>">SHOP</a>
 				</li>
-				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/event1') ?>">EVENT</a>
+				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/event') ?>">EVENT</a>
 				</li>
 				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/store') ?>">STORE</a>
 				</li>
