@@ -118,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</section>
 	<section class="u-align-center u-clearfix u-section-2" id="sec-e50b">
 		<div class="u-clearfix u-sheet u-sheet-1">
-			<h4 class="u-custom-font u-font-oswald u-text u-text-1">CLOTHING &amp; MUSI​C</h4>
+			<h4 class="u-custom-font u-font-oswald u-text u-text-1">CLOTHING&amp;MUSI​C</h4>
 			<div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
 			<div class="u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
 				<div class="u-gallery-inner u-gallery-inner-1">

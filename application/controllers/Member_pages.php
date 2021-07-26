@@ -12,10 +12,24 @@ class Member_pages extends CI_Controller{
 
 	}
 
-    public function index()
+    function index()
     {
         $this->load->view('member/dinamis/header');
         $this->load->view('member/home');
         $this->load->view('member/dinamis/footer');
     }
+
+	function event()
+	{
+		$this->load->view('member/dinamis/header');
+        $this->load->view('member/event');
+        $this->load->view('member/dinamis/footer');
+	}
+
+	function store()
+	{
+		$this->load->view('member/dinamis/header');
+        $this->load->view('member/store');
+        $this->load->view('member/dinamis/footer');
+	}
 }
