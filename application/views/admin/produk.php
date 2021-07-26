@@ -6,7 +6,7 @@
 				<p class="card-category"></p>
 			</div>
 			<div class="card-body">
-				<form>
+				<?php echo form_open_multipart('admin_pages/addProduk','post'); ?>
 					<div class="row">
 						<div class="col-lg-8">
 							<div class="row">
@@ -19,7 +19,7 @@
 								<div class="col-md-5">
 									<div class="form-group">
 										<label class="bmd-label-floating">Harga</label>
-										<input type="number" class="form-control">
+										<input type="number" class="form-control" name="harga">
 									</div>
 								</div>
 							</div>
@@ -29,7 +29,7 @@
 										<label class="bmd-label-floating">Kategori Produk</label>
 										<select class="form-control" name="kategori_list">
 											<option value="0">Pilih Kategori</option>
-											<?php foreach ($list_produk as $s) { ?>
+											<?php foreach ($list_kategori as $s) { ?>
 												<option value="<?php echo $s->kategori ?>"><?php echo $s->kategori ?></option>
 											<?php } ?>
 										</select>
@@ -38,7 +38,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="bmd-label-floating">Tambah Kategori (jika kategori yang diinginkan tidak ada)</label>
-										<input type="text" class="form-control" name="kategori_input">
+										<input type="text" class="form-control" name="kategori_input" disabled>
 									</div>
 								</div>
 							</div>
@@ -48,7 +48,7 @@
 										<label>Deskripsi Produk</label>
 										<div class="form-group">
 											<label class="bmd-label-floating"></label>
-											<textarea class="form-control" rows="5"></textarea>
+											<textarea class="form-control" rows="5" name="deskripsi"></textarea>
 										</div>
 									</div>
 								</div>
@@ -57,16 +57,13 @@
 						<div class="col-lg-4">
 							<div class="form-group">
 								<label>Tambah Gambar Produk</label>
-								<div class="form-group">
-									<label class="bmd-label-floating"></label>
-									<textarea class="form-control" rows="5"></textarea>
-								</div>
 							</div>
+							<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image">
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary pull-right">Tambah Produk</button>
 					<div class="clearfix"></div>
-				</form>
+				<?php echo form_close(); ?>
 			</div>
 			<div style="clear:both"></div>
 		</div>
@@ -98,7 +95,7 @@
 							<div class="form-group">
 								<select class="form-control" name="id">
 									<option value=''>Pilih Kategori</option>
-									<?php foreach ($list_produk as $s) { ?>
+									<?php foreach ($list_kategori as $s) { ?>
 										<option value="<?php echo $s->kategori ?>"><?php echo $s->kategori ?></option>
 									<?php } ?>
 								</select>

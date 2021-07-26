@@ -16,23 +16,58 @@ class Admin_pages extends MY_Controller
 		}
 
 		$this->load->model('m_product');
-
 	}
 
-    public function index()
-    {
+	public function index()
+	{
 		$data['judul'] = 'Dashboard';
-
-        $this->render_admin('admin/home',$data);
-    }
+		$this->render_admin('admin/home', $data);
+	}
 
 	public function produk()
-    {
+	{
 		$data['judul']  = 'Produk';
+		$this->render_admin('admin/produk', $data);
+	}
 
-        $this->render_admin('admin/produk',$data);
-    }
+	public function produkUpdate($id = null)
+	{
+		$data['judul']  = 'Edit Produk';
+		
+		//if (!isset($id)) redirect('admin_pages/produk');
+		
+		$product = $this->m_product;
+        $validation = $this->form_validation;
+        $validation->set_rules($product->rules());
 
+        if ($validation->run()) {
+            $product->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+			
+			redirect('admin_pages/produk','refresh');
+			
+        }
+		$data["product"] = $product->getById($id);
+        if (!$data["product"]) show_404();
+
+		$this->render_admin('admin/update_produk', $data);
+	}
+
+	public function addProduk()
+	{
+		$product = $this->m_product;
+        $validation = $this->form_validation;
+        $validation->set_rules($product->rules());
+
+        if ($validation->run()) {
+            $product->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+		redirect(site_url('admin_pages/produk'));
+	}
+
+	
 	function fetch_produk()
 	{
 		$output = '';
@@ -59,15 +94,22 @@ class Admin_pages extends MY_Controller
 	 	';
 		if ($data->num_rows() > 0) {
 			foreach ($data->result() as $row) {
+
+				if ($row->image == null || $row->image == 'default.png') {
+					$gambar = "Tidak Ada";
+				} else {
+					$gambar = "Ada";
+				}
+
 				$output .= '
 				 <tr>
 				 	<td>' . $no . '</td>
 		  			<td>' . $row->nama_produk . '</td>
 					<td>' . $row->kategori . '</td>
 					<td>' . $row->harga . '</td>
-					<td></td>
-					<td>' . anchor('admin/edit_sekolah/' . $row->id, 'Edit') . '</td>
-					<td>' . anchor('admin/hapus_akun/' . $row->id, 'Hapus') . '</td>
+					<td>' . $gambar . '</td>
+					<td>' . anchor('admin_pages/produkUpdate/' . $row->id, 'Edit') . '</td>
+					<td>' . anchor('admin_pages/delete/' . $row->id, 'Hapus') . '</td>
 				</tr>
 			   ';
 				$no++;
@@ -81,41 +123,12 @@ class Admin_pages extends MY_Controller
 		echo $output;
 	}
 
-	public function tambah_sekolah()
-	{
-		$data['judul1'] = 'Tambah Sekolah';
-		
-		$jenis_pendidikan	= $this->input->post('jenis_pendidikan');
-		$status_sekolah		= $this->input->post('status_sekolah');
-		$urutan				= $this->input->post('urutan');
-		$instansi			= $this->input->post('instansi');
-		$alamat_sekolah 	= $this->input->post('alamat_sekolah');
-		$email_sekolah		= $this->input->post('email_sekolah');
-		$telp_sekolah		= $this->input->post('telp_sekolah');
-
-		if ($urutan == 0) {
-			$urutan = null;
-		}
-
-		$this->form_validation->set_rules('instansi', 'Nama Instansi/Wilayah/Kota', 'trim|required');
-
-		if ($this->form_validation->run() == false) {
-			$this->render_admin('admin/tambah_sekolah', $data);
-		} else {
-			$sekolah = array(
-				'jenis_pendidikan'	=> $jenis_pendidikan,
-				'status_sekolah' 	=> $status_sekolah,
-				'urutan' 			=> $urutan,
-				'instansi' 			=> $instansi,
-				'alamat_sekolah'	=> $alamat_sekolah,
-				'email_sekolah'		=> $email_sekolah,
-				'telp_sekolah'		=> $telp_sekolah,
-			);
-
-			$this->data_model->insertSekolah($sekolah);
-
-			redirect('admin/tambah_sekolah');
-			redirect('admin/list_sekolah');
-		}
-	}
+	public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->m_product->delete($id)) {
+            redirect(site_url('admin_pages/produk'));
+        }
+    }
 }
