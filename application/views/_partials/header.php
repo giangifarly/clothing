@@ -87,7 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 
 			<?php include 'pages.php' ?>
-		</nav><a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
+		</nav><a href="<?php echo site_url('') ?>" class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
 			<img src="<?php echo base_url('assets') ?>/images/xcvxcv.png" class="u-logo-image u-logo-image-1" data-image-width="64">
 		</a>
 	</header>
