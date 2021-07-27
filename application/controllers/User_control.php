@@ -42,7 +42,7 @@ class User_control extends CI_Controller {
 				redirect('admin_pages/');
 			} else if ($this->session->userdata('level') == 2) {
 				$this->m_user->retrieve_data()->result();
-				redirect('member_pages/');
+				redirect('');
 			}
 
 		} else {

@@ -7,11 +7,14 @@ class MY_Controller extends CI_Controller
 	function render_admin($content, $data = null)
 	{
 		$this->load->model('m_product');
+		$this->load->model('m_kategori');
 
 		$data['error'] 					= '';
 		$data['username'] 				= $this->session->userdata('username');
 		
-		$data['list_produk']			= $this->m_product->list_product()->result();
+		$data['list_produk']			= $this->m_product->getAll()->result();
+
+		$data['list_kategori']			= $this->m_kategori->getAll()->result();
 
 		$data['header'] 				= $this->load->view('admin/pager/sidebar',$data);
 		$data['content'] 				= $this->load->view($content, $data);
@@ -22,9 +25,9 @@ class MY_Controller extends CI_Controller
 	}
 
 
-	function render_page_siswa($content, $data = null)
+	function render_pages($content, $data = null)
 	{
-		$this->load->model('m_siswa');
+		$this->load->model('m_product');
 
 		$data['error']		= '';
 		$data['username']	= $this->session->userdata('username');

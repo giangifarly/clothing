@@ -58,6 +58,11 @@
 									<i class="material-icons">notifications</i> Notifications
 								</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="<?php echo site_url('') ?>">
+									<i class="material-icons"></i> Go To Webpage
+								</a>
+							</li>
 							<!-- your navbar here -->
 						</ul>
 					</div>

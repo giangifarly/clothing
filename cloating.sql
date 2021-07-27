@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2021 at 07:18 AM
+-- Generation Time: Jul 27, 2021 at 02:25 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -24,24 +24,74 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `diskon`
+--
+
+CREATE TABLE `diskon` (
+  `id` int(11) NOT NULL,
+  `jumlah_diskon` int(11) NOT NULL,
+  `id_produk` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id` int(11) NOT NULL,
+  `kategori` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `kategori`) VALUES
+(1, 'Shirt'),
+(2, 'Sweatshirt'),
+(3, 'Pants');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lokasi`
+--
+
+CREATE TABLE `lokasi` (
+  `id` int(11) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `koor_x` varchar(50) NOT NULL,
+  `koor_y` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
-  `id` int(11) NOT NULL,
+  `id` varchar(15) NOT NULL,
   `nama_produk` varchar(144) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
   `harga` int(20) NOT NULL,
   `kategori` varchar(50) NOT NULL,
-  `featured` int(1) NOT NULL
+  `featured` int(1) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id`, `nama_produk`, `deskripsi`, `harga`, `kategori`, `featured`) VALUES
-(1, 'daw', 'dsa', 12, 'dasd', 0);
+INSERT INTO `produk` (`id`, `nama_produk`, `deskripsi`, `harga`, `kategori`, `featured`, `image`) VALUES
+('10', 'PSYK', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 1499000, 'Shirt', 0, 'default.png'),
+('11', 'Intorno', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 189000, 'Shirt', 0, '11.jpg'),
+('8', 'Death Bed', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 159900, 'Shirt', 0, '8.jpg'),
+('9', 'Magi', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 259900, 'Shirt', 0, 'default.png');
 
 -- --------------------------------------------------------
 
@@ -73,6 +123,25 @@ INSERT INTO `user` (`id`, `email`, `username`, `password`, `level`) VALUES
 --
 
 --
+-- Indexes for table `diskon`
+--
+ALTER TABLE `diskon`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_produk` (`id_produk`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lokasi`
+--
+ALTER TABLE `lokasi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `produk`
 --
 ALTER TABLE `produk`
@@ -89,10 +158,22 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT for table `diskon`
 --
-ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `diskon`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `lokasi`
+--
+ALTER TABLE `lokasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`

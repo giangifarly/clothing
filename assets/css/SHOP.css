@@ -10,7 +10,7 @@
 
 .u-section-1 .u-repeater-1 {
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
-  min-height: 2010px;
+  min-height: 10px;
   grid-gap: 0px 0px;
 }
 
