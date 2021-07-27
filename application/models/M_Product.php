@@ -89,6 +89,20 @@ class M_Product extends CI_Model
 		return $this->db->update($this->_table, $this, array('id' => $post['id']));
 	}
 
+	public function updateFeaturedOn($id)
+	{
+		$this->db->set('featured', 1);
+		$this->db->where('id', $id);
+		return $this->db->update($this->_table);
+	}
+	public function updateFeaturedOff($id)
+	{
+		$this->db->set('featured', 0);
+		$this->db->where('id', $id);
+		return $this->db->update($this->_table);
+	}	
+
+
 	public function delete($id)
 	{
 		$this->_deleteImage($id);

@@ -17,9 +17,9 @@ class MY_Controller extends CI_Controller
 
 		$data['list_kategori']	= $this->m_kategori->getAll()->result();
 
-		$data['header'] 		= $this->load->view('admin/pager/sidebar',$data);
+		$data['header'] 		= $this->load->view('admin/_partials/sidebar',$data);
 		$data['content'] 		= $this->load->view($content, $data);
-		$data['footer']			= $this->load->view('admin/pager/footer',$data);
+		$data['footer']			= $this->load->view('admin/_partials/footer',$data);
 
 
 		$this->load->view('admin/index', $data);
