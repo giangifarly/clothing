@@ -85,7 +85,7 @@
 				foreach ($products as $product) : ?>
 					<div class="u-align-left u-container-style u-list-item u-repeater-item">
 						<div class="u-container-layout u-similar-container u-valign-top u-container-layout-<?php echo $no ?>">
-							<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('upload/' . $product->image . '') ?>" data-href="EVENT.html" data-page-id="133031349" data-animation-name="swing" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
+							<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('upload/' . $product->image . '') ?>" data-href="<?php echo site_url('pages/description/' . $product->id) ?>" data-page-id="133031349" data-animation-name="swing" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
 							<h3 class="u-text u-text-2"><?php echo $product->nama_produk ?></h3>
 							<h5 class="u-text u-text-3"><?php echo ("Rp. " . number_format($product->harga, 2, ",", ".")) ?></h5>
 						</div>

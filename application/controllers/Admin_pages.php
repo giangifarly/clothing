@@ -30,6 +30,12 @@ class Admin_pages extends MY_Controller
 		$this->render_admin('admin/produk', $data);
 	}
 
+	public function pengaturan()
+	{
+		$data['judul']  = 'Pengaturan';
+		$this->render_admin('admin/pengaturan', $data);
+	}
+
 	public function produkUpdate($id = null)
 	{
 		$data['judul']  = 'Edit Produk';
@@ -88,7 +94,7 @@ class Admin_pages extends MY_Controller
 						<th>Kategori</th>
 						<th>Harga</th>
 						<th>Ketersediaan Gambar Produk</th>
-						<th colspan="2">Option Tambahan</th>
+						<th colspan="3">Option Tambahan</th>
 		 			</tr>
 				</thead>
 	 	';
@@ -101,6 +107,12 @@ class Admin_pages extends MY_Controller
 					$gambar = "Ada";
 				}
 
+				if ($row->featured == 0) {
+					$featured = anchor('admin_pages/turnOnFeatured/'.$row->id, 'Aktifkan Featured');
+				}else{
+					$featured = anchor('admin_pages/turnOffFeatured/'.$row->id, 'Matikan Featured');
+				}
+
 				$output .= '
 				 <tr>
 				 	<td>' . $no . '</td>
@@ -108,6 +120,7 @@ class Admin_pages extends MY_Controller
 					<td>' . $row->kategori . '</td>
 					<td>' . $row->harga . '</td>
 					<td>' . $gambar . '</td>
+					<td>' . $featured . '</td>
 					<td>' . anchor('admin_pages/produkUpdate/' . $row->id, 'Edit') . '</td>
 					<td>' . anchor('admin_pages/delete/' . $row->id, 'Hapus') . '</td>
 				</tr>
@@ -121,6 +134,23 @@ class Admin_pages extends MY_Controller
 		}
 		$output .= '</table>';
 		echo $output;
+	}
+	
+	public function turnOnFeatured($id = null)
+	{
+		if (!isset($id)) show_404();
+        if ($this->m_product->updateFeaturedOn($id)) {
+            redirect(site_url('admin_pages/produk'));
+        }
+	}
+	public function turnOffFeatured($id = null)
+	{
+		if (!isset($id)) show_404();
+        
+		$this->m_product->getById($id);
+        if ($this->m_product->updateFeaturedOff($id)) {
+            redirect(site_url('admin_pages/produk'));
+        }
 	}
 
 	public function delete($id=null)
