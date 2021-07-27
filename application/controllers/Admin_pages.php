@@ -12,7 +12,7 @@ class Admin_pages extends MY_Controller
 		if ($this->session->userdata('username') == "") {
 			redirect('');
 		} elseif ($this->session->userdata('level') == 2) {
-			redirect('member_pages');
+			redirect('pages');
 		}
 
 		$this->load->model('m_product');

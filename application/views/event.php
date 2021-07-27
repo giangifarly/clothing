@@ -1,80 +1,3 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html style="font-size: 16px;">
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="page_type" content="np-template-header-footer-from-plugin">
-
-  <title>HOME</title>
-
-  <link rel="stylesheet" href="<?php echo base_url('assets/css') ?>/Event1.css" media="screen">
-  <link rel="stylesheet" href="<?php echo base_url('assets/css') ?>/nicepage.css" media="screen">
-
-  <script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/nicepage.js" defer=""></script>
-
-  <meta name="generator" content="Nicepage 3.19.4, nicepage.com">
-
-  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "",
-      "logo": "images/xcvxcv.png",
-      "sameAs": [
-        "https://facebook.com/name",
-        "https://twitter.com/name",
-        "https://instagram.com/name"
-      ]
-    }
-  </script>
-
-  <meta name="theme-color" content="#478ac9">
-  <meta name="twitter:site" content="@">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HOME">
-  <meta name="twitter:description" content="">
-  <meta property="og:title" content="HOME">
-  <meta property="og:type" content="website">
-</head>
-
-<body class="u-body">
-  <header class="u-clearfix u-header u-sticky u-header" id="sec-ab77">
-    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-      <div class="menu-collapse">
-        <a class="u-button-style u-nav-link" href="#">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-          </svg>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-              <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
-                <rect y="1" width="16" height="2"></rect>
-                <rect y="7" width="16" height="2"></rect>
-                <rect y="13" width="16" height="2"></rect>
-              </symbol>
-            </defs>
-          </svg>
-        </a>
-      </div>
-
-      <?php include 'dynamic/pages.php' ?>
-
-    </nav><a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="640" data-image-height="640" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
-      <img src="<?php echo base_url('assets') ?>/images/xcvxcv.png" class="u-logo-image u-logo-image-1" data-image-width="64">
-    </a>
-  </header>
 
   <section class="u-align-center-xs u-clearfix u-valign-middle-sm u-white u-section-1" id="carousel_2a9d">
     <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
@@ -210,7 +133,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       <h2 class="u-text u-text-1">Cek terus media sosal kami untuk mendapat udate sale terbaru !</h2>
       <div class="u-social-icons u-spacing-20 u-social-icons-1">
         <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-1">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
               <use xlink:href="#svg-f107"></use>
             </svg>
             <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-f107" class="u-svg-content">
@@ -219,7 +142,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </span>
         </a>
         <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-icon-2">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
               <use xlink:href="#svg-e140"></use>
             </svg>
             <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-e140" class="u-svg-content">
@@ -228,7 +151,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </span>
         </a>
         <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-icon-3">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
               <use xlink:href="#svg-4718"></use>
             </svg>
             <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-4718" class="u-svg-content">
@@ -239,7 +162,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </span>
         </a>
         <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-icon-4">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
               <use xlink:href="#svg-438b"></use>
             </svg>
             <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-438b" class="u-svg-content">
@@ -248,7 +171,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </span>
         </a>
         <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-pinterest u-icon-5">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
               <use xlink:href="#svg-3428"></use>
             </svg>
             <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-3428" class="u-svg-content">

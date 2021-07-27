@@ -25,7 +25,7 @@ class MY_Controller extends CI_Controller
 	}
 
 
-	function render_member($content, $data = null)
+	function render_pages($content, $data = null)
 	{
 		$this->load->model('m_product');
 

@@ -22,7 +22,10 @@ class M_Product extends CI_Model
 
 	public function getAll()
 	{
-		return $this->db->get('produk');
+		$this->db->from('produk');
+		$this->db->order_by('nama_produk', 'asc');
+		
+		return $this->db->get();
 	}
 
 	public function getById($id)
@@ -79,6 +82,7 @@ class M_Product extends CI_Model
 
 	public function delete($id)
 	{
+		$this->_deleteImage($id);
 		return $this->db->delete($this->_table, array('id' => $id));
 	}
 
@@ -101,6 +105,14 @@ class M_Product extends CI_Model
 		return "default.png";
 	}
 
+	private function _deleteImage($id)
+	{
+		$product = $this->getById($id);
+		if ($product->image != "default.png") {
+			$filename = explode(".", $product->image)[0];
+			return array_map('unlink', glob(FCPATH."upload/$filename.*"));
+		}
+	}
 	
 	public function fetch_product($query)
 	{

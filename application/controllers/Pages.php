@@ -3,47 +3,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pages extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_product');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
-		$this->load->view('home');
-		$this->load->view('dynamic/footer');
+		$data['judul'] = "Home";
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('home', $data);
+		$this->load->view('_partials/footer');
 	}
 	public function shop()
 	{
-		$this->load->view('shop');
-		$this->load->view('dynamic/footer');
+		$data['judul'] = "Shop";
+		$data['products'] = $this->m_product->getAll()->result();
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('shop', $data);
+		$this->load->view('_partials/footer');
 	}
 	public function event()
 	{
-		$this->load->view('event');
-		$this->load->view('dynamic/footer');
+		$data['judul'] = "Event";
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('event', $data);
+		$this->load->view('_partials/footer');
 	}
 
 	public function description()
 	{
-		$this->load->view('description');
-		$this->load->view('dynamic/footer');
+		$data['judul'] = "Description";
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('description', $data);
+		$this->load->view('_partials/footer');
 	}
 
 	public function store()
 	{
-		$this->load->view('store');
-		$this->load->view('dynamic/footer');
+		$data['judul'] = "Store";
+
+		$this->load->view('_partials/header', $data);
+		$this->load->view('store', $data);
+		$this->load->view('_partials/footer');
 	}
 	public function login()
 	{
