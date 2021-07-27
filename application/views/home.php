@@ -81,48 +81,17 @@
 		<div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
 		<div class="u-expanded-width u-list u-list-1">
 			<div class="u-repeater u-repeater-1">
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-						<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/adjure-1.jpg" data-href="<?php echo site_url('pages/description') ?>" data-page-id="133031349">
-						<h3 class="u-text u-text-2">Adjure</h3>
-						<h5 class="u-text u-text-3">Rp.169.000</h5>
+				<?php $no = 1;
+				foreach ($products as $product) : ?>
+					<div class="u-align-left u-container-style u-list-item u-repeater-item">
+						<div class="u-container-layout u-similar-container u-valign-top u-container-layout-<?php echo $no ?>">
+							<img alt="" class="u-image u-image-default u-image-1" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('upload/' . $product->image . '') ?>" data-href="EVENT.html" data-page-id="133031349" data-animation-name="swing" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
+							<h3 class="u-text u-text-2"><?php echo $product->nama_produk ?></h3>
+							<h5 class="u-text u-text-3"><?php echo ("Rp. " . number_format($product->harga, 2, ",", ".")) ?></h5>
+						</div>
 					</div>
-				</div>
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-						<img alt="" class="u-image u-image-default u-image-2" data-image-width="2000" data-image-height="2000" src="<?php echo base_url('assets') ?>/images/psyk-1.jpg">
-						<h3 class="u-text u-text-4">Sample Headline</h3>
-						<h5 class="u-text u-text-5">Rp.169.000</h5>
-					</div>
-				</div>
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-						<img alt="" class="u-image u-image-default u-image-3" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/magi-1.jpg">
-						<h3 class="u-text u-text-6">Sample Headline</h3>
-						<h5 class="u-text u-text-7">Rp.169.000</h5>
-					</div>
-				</div>
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
-						<img alt="" class="u-image u-image-default u-image-4" data-image-width="2000" data-image-height="2000" src="<?php echo base_url('assets') ?>/images/deathbed-1.jpg">
-						<h3 class="u-text u-text-8">Sample Headline</h3>
-						<h5 class="u-text u-text-9">Rp.169.000</h5>
-					</div>
-				</div>
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
-						<img alt="" class="u-image u-image-default u-image-5" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/conbird-1.jpg">
-						<h3 class="u-text u-text-10">Sample Headline</h3>
-						<h5 class="u-text u-text-11">Rp.169.000</h5>
-					</div>
-				</div>
-				<div class="u-align-left u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-valign-top u-container-layout-6">
-						<img alt="" class="u-image u-image-default u-image-6" data-image-width="1600" data-image-height="1600" src="<?php echo base_url('assets') ?>/images/intorno-1.jpg">
-						<h3 class="u-text u-text-12">Sample Headline</h3>
-						<h5 class="u-text u-text-13">Rp.169.000</h5>
-					</div>
-				</div>
+				<?php $no++;
+				endforeach; ?>
 			</div>
 		</div>
 	</div>

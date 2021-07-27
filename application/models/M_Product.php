@@ -28,6 +28,15 @@ class M_Product extends CI_Model
 		return $this->db->get();
 	}
 
+	public function getAllFeatured()
+	{
+		$this->db->from($this->_table);
+		$this->db->where('featured',1);
+		$this->db->order_by('nama_produk', 'asc');
+		
+		return $this->db->get();
+	}
+
 	public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id" => $id])->row();

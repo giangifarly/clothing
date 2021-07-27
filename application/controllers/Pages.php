@@ -13,6 +13,7 @@ class Pages extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = "Home";
+		$data['products'] = $this->m_product->getAllFeatured()->result();
 
 		$this->load->view('_partials/header', $data);
 		$this->load->view('home', $data);
