@@ -30,6 +30,12 @@ class Admin_pages extends MY_Controller
 		$this->render_admin('admin/produk', $data);
 	}
 
+	public function pengaturan()
+	{
+		$data['judul']  = 'Pengaturan';
+		$this->render_admin('admin/pengaturan', $data);
+	}
+
 	public function produkUpdate($id = null)
 	{
 		$data['judul']  = 'Edit Produk';

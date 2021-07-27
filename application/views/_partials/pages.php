@@ -31,7 +31,7 @@
 			</li>
 
 			<?php if ($this->session->userdata('level') == 1) { ?>
-				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('admin_pages') ?>"><button class="btn btn-outline-info">Admin Dashboard</button></a>
+				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('admin_pages/') ?>"><button class="btn btn-outline-info">Admin Dashboard</button></a>
 				</li>
 			<?php } ?>
 
