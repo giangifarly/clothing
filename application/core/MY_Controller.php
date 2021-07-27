@@ -34,11 +34,11 @@ class MY_Controller extends CI_Controller
 		$data['username']	= $this->session->userdata('username');
 		$data['id']			= $this->session->userdata('id');
 		
-		$data['data_siswa']	= $this->m_siswa->data_siswa()->result();
+		$data['data_user']	= $this->m_user->retrieve_data()->result();
 
-		$data['header']		= $this->load->view('siswa/config/header');
+		$data['header']		= $this->load->view('_partials/header');
 		$data['content']	= $this->load->view($content, $data);
-		$data['footer']		= $this->load->view('siswa/config/footer');
+		$data['footer']		= $this->load->view('_partials/footer');
 
 		$this->load->view('siswa/index', $data);
 	}
