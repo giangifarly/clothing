@@ -1,13 +1,20 @@
 <?php
 class M_user extends CI_Model
 {
-    public function __construct(){
-		parent::__construct();	
+    private $_table = 'user';
+
+	public $id;
+	public $email;
+	public $username;
+	public $password;
+	public $level;
+
+	public function getById($id){
+		return $this->db->get_where($this->_table, ['id' => $id])->row();
 	}
 
-	function check_username($username){
-		$query = $this->db->query("SELECT username FROM user WHERE username='$username'");
-		return $query;
+	public function checkUsername($username){
+		return $this->db->get_where($this->_table, ['username' => $username])->row();
 	}
 
 	public function check_user($username, $email, $password) {
@@ -19,9 +26,8 @@ class M_user extends CI_Model
 
 		$id = $this->session->userdata('id');
 		
-		$this->db->from('user');
+		$this->db->from($this->_table);
 		$this->db->where('id', $id);
-		
 
 		$query = $this->db->get();
 
@@ -29,11 +35,7 @@ class M_user extends CI_Model
 	}
 
 	public function daftar($datauser){
-		$this->db->insert('user',$datauser);
-	}
-
-	public function siswa($datasiswa){
-		$this->db->insert('siswa',$datasiswa);
+		$this->db->insert($this->_table,$datauser);
 	}
 
     public function data_siswa()
@@ -57,9 +59,9 @@ class M_user extends CI_Model
 
 	public function check_password()
 	{
-		$id_user = $this->session->userdata('id_user');
-		$this->db->from('users');
-		$this->db->where('id_user', $id_user);
+		$id = $this->session->userdata('id_user');
+		$this->db->from($this->_table);
+		$this->db->where('id', $id);
 		
 		$query = $this->db->get();
 		

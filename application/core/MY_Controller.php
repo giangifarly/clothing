@@ -9,30 +9,31 @@ class MY_Controller extends CI_Controller
 		$this->load->model('m_product');
 		$this->load->model('m_kategori');
 
-		$data['error'] 					= '';
-		$data['username'] 				= $this->session->userdata('username');
+		$data['error'] 			= '';
+		$data['username'] 		= $this->session->userdata('username');
+		$data['id']				= $this->session->userdata('id');
 		
-		$data['list_produk']			= $this->m_product->getAll()->result();
+		$data['list_produk']	= $this->m_product->getAll()->result();
 
-		$data['list_kategori']			= $this->m_kategori->getAll()->result();
+		$data['list_kategori']	= $this->m_kategori->getAll()->result();
 
-		$data['header'] 				= $this->load->view('admin/pager/sidebar',$data);
-		$data['content'] 				= $this->load->view($content, $data);
-		$data['footer']					= $this->load->view('admin/pager/footer',$data);
+		$data['header'] 		= $this->load->view('admin/pager/sidebar',$data);
+		$data['content'] 		= $this->load->view($content, $data);
+		$data['footer']			= $this->load->view('admin/pager/footer',$data);
 
 
 		$this->load->view('admin/index', $data);
 	}
 
 
-	function render_pages($content, $data = null)
+	function render_member($content, $data = null)
 	{
 		$this->load->model('m_product');
 
 		$data['error']		= '';
 		$data['username']	= $this->session->userdata('username');
+		$data['id']			= $this->session->userdata('id');
 		
-		$data['id']			= $this->session->userdata('id_user');
 		$data['data_siswa']	= $this->m_siswa->data_siswa()->result();
 
 		$data['header']		= $this->load->view('siswa/config/header');

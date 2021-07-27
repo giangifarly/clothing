@@ -36,14 +36,16 @@ class User_control extends CI_Controller {
 			);
 
             $this->session->set_userdata($newdata);
+			$this->m_user->retrieve_data()->result();
 
-			if ($this->session->userdata('level') == 1) {
-				$this->m_user->retrieve_data()->result();
-				redirect('admin_pages/');
-			} else if ($this->session->userdata('level') == 2) {
-				$this->m_user->retrieve_data()->result();
-				redirect('');
-			}
+			//if ($this->session->userdata('level') == 1) {
+			//	$this->m_user->retrieve_data()->result();
+			//	redirect('admin_pages/');
+			//} else if ($this->session->userdata('level') == 2) {
+			//	$this->m_user->retrieve_data()->result();
+			//	redirect('');
+			//}
+			redirect('');
 
 		} else {
 			$this->session->set_flashdata('result_login', '<div class="alert alert-danger">Username atau Password yang anda masukkan salah!</div>');
