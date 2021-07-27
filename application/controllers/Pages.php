@@ -37,9 +37,10 @@ class Pages extends CI_Controller {
 		$this->load->view('_partials/footer');
 	}
 
-	public function description()
+	public function description($id = null)
 	{
 		$data['judul'] = "Description";
+		$data['products'] = $this->m_product->getById($id);
 
 		$this->load->view('_partials/header', $data);
 		$this->load->view('description', $data);
