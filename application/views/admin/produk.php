@@ -1,3 +1,11 @@
+<style type="text/css">
+	#image-preview {
+		display: none;
+		width: 100%;
+		height: 300px;
+	}
+</style>
+
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="row flex-grow">
@@ -59,7 +67,8 @@
 									<label>Tambah Gambar Produk</label>
 									<div class="form-group">
 										<label class="bmd-label-floating"></label>
-										<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image">
+										<img id="image-preview" alt="image preview"/>
+										<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" id="image-source" onchange="previewImage();">
 										<small id="helpId" class="text-muted"></small>
 									</div>
 								</div>

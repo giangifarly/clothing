@@ -23,19 +23,22 @@ class User_control extends CI_Controller
 		if ($result->num_rows() > 0) {
 			foreach ($result->result() as $row) {
 				$id = $row->id;
+				$nama_lengkap = $row->nama_lengkap;
 				$username = $row->username;
 				$password = $row->password;
 				$email = $row->email;
 				$level = $row->level;
+				$image = $row->image;
 			}
 
 			$newdata = array(
 				'id' => $id,
+				'nama_lengkap' => $nama_lengkap,
 				'username' => $username,
 				'password' => $password,
 				'email' => $email,
 				'level' => $level,
-
+				'image' => $image
 			);
 
 			$this->session->set_userdata($newdata);
