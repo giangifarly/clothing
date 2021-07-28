@@ -32,7 +32,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script src="<?php echo base_url('assets/bower_components') ?>/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+	function previewImage() {
+		document.getElementById("image-preview").style.display = "block";
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
 
+		oFReader.onload = function(oFREvent) {
+			document.getElementById("image-preview").src = oFREvent.target.result;
+		};
+	};
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -55,16 +65,6 @@
 				}
 			})
 		}
-
-		function previewImage() {
-			document.getElementById("image-preview").style.display = "block";
-			var oFReader = new FileReader();
-			oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
-
-			oFReader.onload = function(oFREvent) {
-				document.getElementById("image-preview").src = oFREvent.target.result;
-			};
-		};
 
 		$('#search_text').keyup(function() {
 			var search = $(this).val();

@@ -22,6 +22,9 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/dashboard/template') ?>/css/vertical-layout-light/style.css">
 	<!-- endinject -->
 	<link rel="shortcut icon" href="<?php echo base_url('assets/dashboard/template') ?>/images/favicon.png" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 </head>
 
 <body>
