@@ -16,7 +16,15 @@ class M_Product extends CI_Model
 		return [
 			['field' => 'nama_produk',
 			'label' => 'Nama Produk',
-			'rules' => 'required']
+			'rules' => 'required'],
+
+			['field' => 'deskripsi',
+			'label' => 'Deskripsi Produk',
+			'rules' => 'required'],
+
+			['field' => 'harga',
+			'label' => 'Harga Produk',
+			'rules' => 'required'],
 		];
 	}
 

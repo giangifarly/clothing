@@ -21,7 +21,7 @@
 						<p class="card-description">
 							Jangan keseringan ganti password. Nanti lupa :)
 						</p>
-						<form class="forms-sample" action="" method="post">
+						<form class="forms-sample" action="<?= site_url('user_control/updatePassword') ?>" method="post">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password Lama</label>
 								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="old_password" required>

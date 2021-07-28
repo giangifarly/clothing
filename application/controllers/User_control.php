@@ -92,10 +92,25 @@ class User_control extends CI_Controller {
 		}
 	}
 
+	public function updatePassword()
+	{
+		$id = $this->session->userdata('id');
+		$user = $this->m_user;
+		$validation = $this->form_validation->set_rules($user->updatePasswordRules());
+
+		if ($validation->run()) {
+			$user->updatePassword();
+			$this->session->set_flashdata('success', 'Password Berhasil diubah');
+		}
+
+		redirect('admin_pages/pengaturan','refresh');
+	}
+
     function logout()
 	{
 		$this->session->sess_destroy();
 		redirect(site_url(''));
 	}
+
 
 }
