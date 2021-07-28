@@ -15,7 +15,7 @@
 		</li>
 		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/store') ?>">STORE</a>
 		</li>
-		<li class="u-nav-item"><a class="u-button-style u-nav-link">ABOUT</a>
+		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/about') ?>">ABOUT</a>
 		</li>
 		<?php if ($this->session->userdata('id') > 0) { ?>
 			<li class="u-nav-item">
@@ -24,7 +24,7 @@
 						<b><?php echo $this->session->userdata('username'); ?></b>
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="<?php echo site_url('member_pages/profile') ?>">Profil</a>
+						<a class="dropdown-item" href="<?php echo site_url('pages/profile') ?>">Profil</a>
 						<a class="dropdown-item btn-outline-danger" href="<?php echo site_url('user_control/logout') ?>">Log Out</a>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 		<?php } else { ?>
 			<li class="u-nav-item">
 				<a class="btn btn-outline-dark btn-lg" href="<?php echo site_url('pages/login') ?>">LOG IN</a>
-				<a class="btn btn-dark btn-lg" href="<?php echo site_url('pages/login') ?>">REGISTER</a>
+				<a class="btn btn-dark btn-lg" href="<?php echo site_url('pages/register') ?>">REGISTER</a>
 			</li>
 		<?php } ?>
 

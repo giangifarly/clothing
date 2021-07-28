@@ -16,15 +16,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<link rel="stylesheet" href="<?php echo base_url('assets/css') ?>/nicepage.css" media="screen">
 	<?php
-	if ($this->uri->segment(2) == "shop") {
-		echo "<link rel='stylesheet' href='".base_url("assets/css")."/SHOP.css' media='screen'>";
-	}elseif ($this->uri->segment(2)== "event") {
-		echo "<link rel='stylesheet' href='".base_url("assets/css")."/Event1.css' media='screen'>";
-	}elseif ($this->uri->segment(2) == "store") {
-		echo "<link rel='stylesheet' href='".base_url("assets/css")."/Store.css' media='screen'>";
-	}elseif ($this->uri->segment(2) == "" ){
-		echo "<link rel='stylesheet' href='".base_url("assets/css")."/HOME.css' media='screen'>";
-	} ?>
+    if ($this->uri->segment(2) == "shop") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/SHOP.css' media='screen'>";
+    } elseif ($this->uri->segment(2)== "event") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/Event1.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "store") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/Store.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/HOME.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "about") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/About.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "register") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/Register.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "profile") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/Profile.css' media='screen'>";
+    } elseif ($this->uri->segment(2) == "edit_profile") {
+        echo "<link rel='stylesheet' href='".base_url("assets/css")."/Edit_profile.css' media='screen'>";
+    } ?>
 
 	
 
