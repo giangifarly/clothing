@@ -23,11 +23,17 @@
 	<!-- endinject -->
 	<link rel="shortcut icon" href="<?php echo base_url('assets/dashboard/template') ?>/images/favicon.png" />
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
 </head>
 
 <body>
+	<style type="text/css">
+		#image-preview {
+			display: none;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
 	<div class="container-scroller">
 		<!-- partial:partials/_navbar.html -->
 		<?php include "navbar.php" ?>

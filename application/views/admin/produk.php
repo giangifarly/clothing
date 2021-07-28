@@ -1,15 +1,7 @@
-<style type="text/css">
-	#image-preview {
-		display: none;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="row flex-grow">
-			<div class="col-sm-8 grid-margin stretch-card">
+			<div class="col-sm-9 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title ">Tambah Produk</h4>
@@ -67,10 +59,14 @@
 									<label>Tambah Gambar Produk</label>
 									<div class="form-group">
 										<label class="bmd-label-floating"></label>
-										<img id="image-preview" alt="image preview"/>
-										<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" id="image-source" onchange="previewImage();">
+										<div class="input-group">
+											<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" id="image-source" onchange="previewImage();">
+										</div>
 										<small id="helpId" class="text-muted"></small>
 									</div>
+								</div>
+								<div class="form-group">
+									<img class="form-control" id="image-preview" alt="image preview" class="img-thumbnail">
 								</div>
 							</div>
 						</div>
@@ -80,7 +76,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4 grid-margin stretch-card">
+			<div class="col-sm-3 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title ">Filter Produk</h4>

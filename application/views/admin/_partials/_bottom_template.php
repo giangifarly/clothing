@@ -30,6 +30,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<?=$this->session->flashdata('notif')?>
 
 <script src="<?php echo base_url('assets/bower_components') ?>/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
