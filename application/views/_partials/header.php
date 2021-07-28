@@ -43,6 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 	<link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
+	<link rel="shortcut icon" href="<?php echo base_url('assets') ?>/images/xcvxcv.png" />
 
 
 	<script type="application/ld+json">
