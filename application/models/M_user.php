@@ -7,6 +7,9 @@ class M_user extends CI_Model
 	public $email;
 	public $username;
 	public $password;
+	public $old_password;
+	public $new_password;
+	public $retype_new_password;
 	public $level;
 
 	public function updatePasswordRules()
@@ -15,7 +18,7 @@ class M_user extends CI_Model
 			[
 				'field' => 'old_password',
 				'label' => 'Password Lama',
-				'rules' => 'required|min_length[8]'
+				'rules' => 'required'
 			],
 
 			[
@@ -87,19 +90,14 @@ class M_user extends CI_Model
 	public function updatePassword()
 	{
 		$post = $this->input->post();
-		$this->id =  $this->session->userdata('id');
-		$this->password =  md5($post['new_password']);
-		$retype_password = md5($post['retype_old_password']);
-
-		if ($this->checkPassword() > 0) {
-			if ($this->password == $retype_password) {
-				$this->db->set('password', $this->password);
-				$this->db->where('id', $this->id);
-				$return = $this->db->update($this->_table);
-			}
-		}
-
-		return $return;
+		$this->id 					= $this->session->userdata('id');
+		$this->old_password 			= md5($post['old_password']);
+		$this->new_password 		= md5($post['new_password']);
+		$this->retype_new_password 	= md5($post['retype_new_password']);
+		
+		$this->db->set('password', $this->new_password);
+		$this->db->where('id', $this->id);
+		return $this->db->update($this->_table);
 	}
 
 	public function checkPassword()

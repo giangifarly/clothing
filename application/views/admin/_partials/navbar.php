@@ -17,8 +17,8 @@
 	<div class="navbar-menu-wrapper d-flex align-items-top">
 		<ul class="navbar-nav">
 			<li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-				<h1 class="welcome-text">Greetings, <span class="text-black fw-bold"><?php echo $this->session->userdata('username') ?></span></h1>
-				<h3 class="welcome-sub-text">Your performance summary this week </h3>
+				<h1 class="welcome-text">Greetings, <span class="text-black fw-bold"><?php echo $this->session->userdata('nama_lengkap') ?></span></h1>
+				<h3 class="welcome-sub-text">Halaman saat ini : <?= $judul ?> </h3>
 			</li>
 		</ul>
 		<ul class="navbar-nav ms-auto">
@@ -153,7 +153,7 @@
 				<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
 					<div class="dropdown-header text-center">
 						<img class="img-md rounded-circle" src="<?php echo base_url('assets/dashboard/template') ?>/images/faces/face8.jpg" alt="Profile image">
-						<p class="mb-1 mt-3 font-weight-semibold"><?php echo $this->session->userdata('username') ?></p>
+						<p class="mb-1 mt-3 font-weight-semibold"><?php echo $this->session->userdata('nama_lengkap') ?></p>
 						<p class="fw-light text-muted mb-0"><?php echo $this->session->userdata('email') ?></p>
 					</div>
 					<a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
