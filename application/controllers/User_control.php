@@ -110,7 +110,11 @@ class User_control extends CI_Controller
 				$user->updatePassword();
 				$this->session->set_flashdata('success', 'Berhasil disimpan');
 
-				redirect('admin_pages/pengaturan', 'refresh');
+				if ($this->session->userdata('level') == 1) {
+					redirect('admin_pages/pengaturan', 'refresh');
+				}else if($this->session->userdata('level') == 2){
+					redirect('pages/profile', 'refresh');
+				}
 			}
 		}
 	}
