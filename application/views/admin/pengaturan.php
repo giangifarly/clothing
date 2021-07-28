@@ -24,15 +24,15 @@
 						<form class="forms-sample" action="<?= site_url('user_control/updatePassword') ?>" method="post">
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password Lama</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="old_password" required>
+								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password Lama" name="old_password" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password Baru</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="new_password" required>
+								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password Baru" name="new_password" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputConfirmPassword1">Ulangi Password Baru</label>
-								<input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password" name="retype_new_password" required>
+								<input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Masukkan Ulan Password Baru" name="retype_new_password" required>
 							</div>
 							<button type="submit" class="btn btn-primary me-2">Ganti Password</button>
 						</form>

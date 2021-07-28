@@ -1,15 +1,18 @@
 <?php
 
-class User_control extends CI_Controller {
+class User_control extends CI_Controller
+{
 
-	public function __construct() {
+	public function __construct()
+	{
 		parent::__construct();
 		$this->load->model('m_user');
 	}
 
 
 	//function for processing login form
-	public function login_process() {
+	public function login_process()
+	{
 		$username = $this->input->post('username');
 		$email	  = $this->input->post('username');
 		$password = md5($this->input->post('password'));
@@ -32,10 +35,10 @@ class User_control extends CI_Controller {
 				'password' => $password,
 				'email' => $email,
 				'level' => $level,
-				
+
 			);
 
-            $this->session->set_userdata($newdata);
+			$this->session->set_userdata($newdata);
 			$this->m_user->retrieve_data()->result();
 
 			//if ($this->session->userdata('level') == 1) {
@@ -46,37 +49,37 @@ class User_control extends CI_Controller {
 			//	redirect('');
 			//}
 			redirect('');
-
 		} else {
 			$this->session->set_flashdata('result_login', '<div class="alert alert-danger">Username atau Password yang anda masukkan salah!</div>');
 			redirect('');
 		}
 	}
 
-// FUNCTION REGISTRATION
+	// FUNCTION REGISTRATION
 
-	public function register() {
+	public function register()
+	{
 		$level = 2;
 		$username = $this->input->post('username');
 
 		$result = $this->m_user->check_username($username);
 
 
-		$this->form_validation->set_rules('name', 'Name','required');
-		$this->form_validation->set_rules('email', 'Email','required|valid_email');
-		$this->form_validation->set_rules('username', 'Username','required');
-		$this->form_validation->set_rules('password','Password','required|min_length[8]');
-		$this->form_validation->set_rules('password_conf','Password Confirm','required|matches[password]');
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+		$this->form_validation->set_rules('password_conf', 'Password Confirm', 'required|matches[password]');
 
 
 
-		if($this->form_validation->run() == FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home');
 			$this->load->view('dynamic/footer');
-		}else{
+		} else {
 
 			if ($result > 0) {
-				$this->session->set_flashdata('error_register','<div class="alert alert-danger alert-sm">Username Anda Sudah digunakan. Harap mencoba Username lain.</div>');
+				$this->session->set_flashdata('error_register', '<div class="alert alert-danger alert-sm">Username Anda Sudah digunakan. Harap mencoba Username lain.</div>');
 				redirect('register');
 			}
 
@@ -94,23 +97,24 @@ class User_control extends CI_Controller {
 
 	public function updatePassword()
 	{
-		$id = $this->session->userdata('id');
+
 		$user = $this->m_user;
-		$validation = $this->form_validation->set_rules($user->updatePasswordRules());
+		$validation = $this->form_validation;
+		$validation->set_rules($user->updatePasswordRules());
 
 		if ($validation->run()) {
-			$user->updatePassword();
-			$this->session->set_flashdata('success', 'Password Berhasil diubah');
-		}
+			if ($user->checkPassword() > 0) {
+				$user->updatePassword();
+				$this->session->set_flashdata('success', 'Berhasil disimpan');
 
-		redirect('admin_pages/pengaturan','refresh');
+				redirect('admin_pages/pengaturan', 'refresh');
+			}
+		}
 	}
 
-    function logout()
+	function logout()
 	{
 		$this->session->sess_destroy();
 		redirect(site_url(''));
 	}
-
-
 }
