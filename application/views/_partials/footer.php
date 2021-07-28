@@ -12,7 +12,7 @@
         <a href="https://nicepage.com/k/home-improvement-website-templates" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-hover-grey-15 u-text-white u-btn-5">Forget All These Memories</a>
         <h5 class="u-text u-text-1">FIND US ON</h5>
         <div class="u-social-icons u-spacing-10 u-social-icons-1">
-            <a class="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name"><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <a class="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name"><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d1ce"></use>
                     </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-d1ce">
                         <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
@@ -20,7 +20,7 @@
 c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path>
                     </svg></span>
             </a>
-            <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/name"><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/name"><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-62bd"></use>
                     </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-62bd">
                         <circle fill="currentColor" class="st0" cx="56.1" cy="56.1" r="55"></circle>
@@ -31,7 +31,7 @@ c-0.2-1-0.3-2-0.3-3.1c0-7.4,6-13.4,13.4-13.4c3.9,0,7.3,1.6,9.8,4.2c3.1-0.6,5.9-1
 c2.7-0.3,5.3-1,7.7-2.1C88.7,43,86.4,45.4,83.8,47.3z"></path>
                     </svg></span>
             </a>
-            <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style="">
+            <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name"><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-black"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f941"></use>
                     </svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-f941">
                         <path fill="currentColor" d="M55.9,32.9c-12.8,0-23.2,10.4-23.2,23.2s10.4,23.2,23.2,23.2s23.2-10.4,23.2-23.2S68.7,32.9,55.9,32.9z

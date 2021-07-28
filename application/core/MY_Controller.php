@@ -8,10 +8,12 @@ class MY_Controller extends CI_Controller
 	{
 		$this->load->model('m_product');
 		$this->load->model('m_kategori');
+		$this->load->model('m_user');
 
 		$data['error'] 			= '';
 		$data['username'] 		= $this->session->userdata('username');
 		$data['id']				= $this->session->userdata('id');
+		$data['user']	 		= $this->m_user->retrieve_data()->result();
 		
 		$data['list_produk']	= $this->m_product->getAll()->result();
 
@@ -34,7 +36,7 @@ class MY_Controller extends CI_Controller
 		$data['username']	= $this->session->userdata('username');
 		$data['id']			= $this->session->userdata('id');
 		
-		$data['data_user']	= $this->m_user->retrieve_data()->result();
+		$data['user']	= $this->m_user->retrieve_data()->result();
 
 		$data['header']		= $this->load->view('_partials/header');
 		$data['content']	= $this->load->view($content, $data);

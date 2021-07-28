@@ -9,6 +9,8 @@
 	</a>
 </li>
 
+<li class="nav-item nav-category">Konfigurasi Produk</li>
+
 <li class="nav-item ">
 
 	<a class="nav-link" href="<?php echo site_url('admin_pages/produk') ?>">
@@ -18,9 +20,10 @@
 </li>
 
 <li class="nav-item ">
-
 	<a class="nav-link" href="<?php echo site_url('admin_pages/pengaturan') ?>">
 		<i class="mdi mdi-settings menu-icon"></i>
 		<span class="menu-title">Pengaturan</span>
 	</a>
 </li>
+
+

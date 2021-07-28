@@ -39,22 +39,21 @@ class Admin_pages extends MY_Controller
 	public function produkUpdate($id = null)
 	{
 		$data['judul']  = 'Edit Produk';
-		
-		//if (!isset($id)) redirect('admin_pages/produk');
-		
-		$product = $this->m_product;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
 
-        if ($validation->run()) {
-            $product->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-			
-			redirect('admin_pages/produk','refresh');
-			
-        }
+		//if (!isset($id)) redirect('admin_pages/produk');
+
+		$product = $this->m_product;
+		$validation = $this->form_validation;
+		$validation->set_rules($product->rules());
+
+		if ($validation->run()) {
+			$product->update();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+
+			redirect('admin_pages/produk', 'refresh');
+		}
 		$data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
+		if (!$data["product"]) show_404();
 
 		$this->render_admin('admin/update_produk', $data);
 	}
@@ -62,18 +61,18 @@ class Admin_pages extends MY_Controller
 	public function addProduk()
 	{
 		$product = $this->m_product;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+		$validation = $this->form_validation;
+		$validation->set_rules($product->rules());
 
-        if ($validation->run()) {
-            $product->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
+		if ($validation->run()) {
+			$product->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+		}
 
 		redirect(site_url('admin_pages/produk'));
 	}
 
-	
+
 	function fetch_produk()
 	{
 		$output = '';
@@ -86,8 +85,8 @@ class Admin_pages extends MY_Controller
 		$no = 1;
 		$output .= '
 	 	<div class="table-responsive">
-			<table class="table">
-				<thead class=" text-primary">
+			<table class="table table-hover">
+				<thead>
 					<tr>
 						<th>No</th>		  			
 		  				<th>Nama Produk</th>
@@ -106,14 +105,16 @@ class Admin_pages extends MY_Controller
 				} else {
 					$gambar = "Ada";
 				}
+				
 
 				if ($row->featured == 0) {
-					$featured = anchor('admin_pages/turnOnFeatured/'.$row->id, 'Aktifkan Featured');
-				}else{
-					$featured = anchor('admin_pages/turnOffFeatured/'.$row->id, 'Matikan Featured');
+					$featured = anchor('admin_pages/turnOnFeatured/' . $row->id, 'Aktifkan Featured', "class='badge badge-success'");
+				} else {
+					$featured = anchor('admin_pages/turnOffFeatured/' . $row->id, 'Matikan Featured', "class='badge badge-danger'");
 				}
 
 				$output .= '
+				<tbody>
 				 <tr>
 				 	<td>' . $no . '</td>
 		  			<td>' . $row->nama_produk . '</td>
@@ -124,6 +125,7 @@ class Admin_pages extends MY_Controller
 					<td>' . anchor('admin_pages/produkUpdate/' . $row->id, 'Edit') . '</td>
 					<td>' . anchor('admin_pages/delete/' . $row->id, 'Hapus') . '</td>
 				</tr>
+				</tbody>
 			   ';
 				$no++;
 			}
@@ -132,33 +134,33 @@ class Admin_pages extends MY_Controller
 		  <td colspan="5">No Data Found</td>
 		 </tr>';
 		}
-		$output .= '</table>';
+		$output .= '</table></div>';
 		echo $output;
 	}
-	
+
 	public function turnOnFeatured($id = null)
 	{
 		if (!isset($id)) show_404();
-        if ($this->m_product->updateFeaturedOn($id)) {
-            redirect(site_url('admin_pages/produk'));
-        }
+		if ($this->m_product->updateFeaturedOn($id)) {
+			redirect(site_url('admin_pages/produk'));
+		}
 	}
 	public function turnOffFeatured($id = null)
 	{
 		if (!isset($id)) show_404();
-        
+
 		$this->m_product->getById($id);
-        if ($this->m_product->updateFeaturedOff($id)) {
-            redirect(site_url('admin_pages/produk'));
-        }
+		if ($this->m_product->updateFeaturedOff($id)) {
+			redirect(site_url('admin_pages/produk'));
+		}
 	}
 
-	public function delete($id=null)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->m_product->delete($id)) {
-            redirect(site_url('admin_pages/produk'));
-        }
-    }
+	public function delete($id = null)
+	{
+		if (!isset($id)) show_404();
+
+		if ($this->m_product->delete($id)) {
+			redirect(site_url('admin_pages/produk'));
+		}
+	}
 }
