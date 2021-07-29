@@ -4,7 +4,7 @@
 
 <div class="u-custom-menu u-nav-container">
 	<ul class="u-nav u-unstyled">
-		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('') ?>">HOME</a>
+		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('') ?>">BERANDA</a>
 		</li>
 		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/shop') ?>">SHOP</a>
 		</li>
