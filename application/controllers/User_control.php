@@ -92,12 +92,27 @@ class User_control extends CI_Controller
 			$datauser['level']  		=    $level;
 			$datauser['image']  		=    'default.png';
 
-			$this->m_user->daftar($datauser);
+			$this->m_user->register($datauser);
 			$this->session->set_flashdata('result_register', '<div class="alert alert-success">Registrasi Berhasil! Silahkan untuk Login</div>');
 			redirect('pages/login');
 		}
 	}
 
+	public function updateProfile()
+	{
+
+		$user = $this->m_user;
+		$validation = $this->form_validation;
+		$validation->set_rules($user->updateProfileRules());
+
+		if ($validation->run()) {
+			if ($user->checkPassword() > 0) {
+				$user->updateProfile();
+				$this->session->set_flashdata('success', 'Berhasil disimpan');
+				redirect('pages/edit_profile', 'refresh');
+			}
+		}
+	}
 	public function updatePassword()
 	{
 

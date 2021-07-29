@@ -36,6 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	
 
+	<script class="u-script" type="text/javascript" src="<?php echo base_url('assets/plugins/picture-updated/dist') ?>/script.js" defer=""></script>
 	<script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/jquery.js" defer=""></script>
 	<script class="u-script" type="text/javascript" src="<?php echo base_url('assets/js') ?>/nicepage.js" defer=""></script>
 
