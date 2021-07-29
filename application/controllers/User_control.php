@@ -65,20 +65,19 @@ class User_control extends CI_Controller
 		$level = 2;
 		$username = $this->input->post('username');
 
-		$result = $this->m_user->check_username($username);
+		$result = $this->m_user->checkUsername($username);
 
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-		$this->form_validation->set_rules('password_conf', 'Password Confirm', 'required|matches[password]');
 
 
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home');
-			$this->load->view('dynamic/footer');
+			$this->session->set_flashdata('result_register', '<div class="alert alert-danger">Registrasi GAGAL! Silahkan untuk Cek ulang data</div>');
+			redirect('pages/register','refresh');
 		} else {
 
 			if ($result > 0) {
@@ -86,15 +85,16 @@ class User_control extends CI_Controller
 				redirect('register');
 			}
 
-			$datauser['nama']   	=    $this->input->post('name');
-			$datauser['username']	=    $this->input->post('username');
-			$datauser['email']  	=    $this->input->post('email');
-			$datauser['password']	=    md5($this->input->post('password'));
-			$datauser['level']  	=    $level;
+			$datauser['nama_lengkap']   =    $this->input->post('name');
+			$datauser['username']		=    $this->input->post('username');
+			$datauser['email']  		=    $this->input->post('email');
+			$datauser['password']		=    md5($this->input->post('password'));
+			$datauser['level']  		=    $level;
+			$datauser['image']  		=    'default.png';
 
 			$this->m_user->daftar($datauser);
 			$this->session->set_flashdata('result_register', '<div class="alert alert-success">Registrasi Berhasil! Silahkan untuk Login</div>');
-			redirect('register');
+			redirect('pages/login');
 		}
 	}
 
