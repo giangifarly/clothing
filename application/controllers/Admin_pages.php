@@ -66,7 +66,7 @@ class Admin_pages extends MY_Controller
 
 		if ($validation->run()) {
 			$product->save();
-			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil disimpan!', 'success');</script>");
 		}
 
 		redirect(site_url('admin_pages/produk'));

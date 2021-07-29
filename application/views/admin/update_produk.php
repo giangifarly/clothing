@@ -1,13 +1,11 @@
-<div class="content">
-	<div class="container-fluid">
+<div class="main-panel">
+	<div class="content-wrapper">
 		<div class="card">
-			<div class="card-header card-header-primary">
-				<h4 class="card-title ">Tambah Produk</h4>
-				<p class="card-category"></p>
-			</div>
 			<div class="card-body">
+				<h4 class="card-title "><?= $judul ?></h4>
+				<p class="card-category"></p>
 				<?php echo form_open_multipart('admin_pages/produkUpdate', 'post'); ?>
-				<input type="hidden" name="id" value="<?php echo $product->id?>">
+				<input type="hidden" name="id" value="<?php echo $product->id ?>">
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="row">
@@ -20,7 +18,7 @@
 							<div class="col-md-5">
 								<div class="form-group">
 									<label class="bmd-label-floating">Harga</label>
-									<input type="number" class="form-control" name="harga" value="<?php echo $product->harga?>">
+									<input type="number" class="form-control" name="harga" value="<?php echo $product->harga ?>">
 								</div>
 							</div>
 						</div>
@@ -50,7 +48,7 @@
 									<label>Deskripsi Produk</label>
 									<div class="form-group">
 										<label class="bmd-label-floating"></label>
-										<textarea class="form-control" rows="5" name="deskripsi"><?php echo $product->deskripsi?></textarea>
+										<textarea class="form-control" rows="5" name="deskripsi" style="height: 150px;"><?php echo $product->deskripsi ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -59,8 +57,17 @@
 					<div class="col-lg-4">
 						<div class="form-group">
 							<label>Tambah Gambar Produk</label>
+							<div class="form-group">
+								<label class="bmd-label-floating"></label>
+								<div class="input-group">
+									<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" id="image-source" onchange="previewImage();">
+								</div>
+								<small id="helpId" class="text-muted"></small>
+							</div>
 						</div>
-						<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image">
+						<div class="form-group">
+							<img class="form-control" id="image-preview" alt="image preview" class="img-thumbnail">
+						</div>
 						<input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
 					</div>
 				</div>

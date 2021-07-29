@@ -21,10 +21,19 @@
 	<!-- inject:css -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/dashboard/template') ?>/css/vertical-layout-light/style.css">
 	<!-- endinject -->
-	<link rel="shortcut icon" href="<?php echo base_url('assets/dashboard/template') ?>/images/favicon.png" />
+	<link rel="shortcut icon" href="<?php echo base_url('assets') ?>/images/xcvxcv.png" />
+
 </head>
 
 <body>
+	<style type="text/css">
+		#image-preview {
+			display: none;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
 	<div class="container-scroller">
 		<!-- partial:partials/_navbar.html -->
 		<?php include "navbar.php" ?>

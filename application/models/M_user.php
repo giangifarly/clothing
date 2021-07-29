@@ -4,6 +4,7 @@ class M_user extends CI_Model
 	private $_table = 'user';
 
 	public $id;
+	public $nama_lengkap;
 	public $email;
 	public $username;
 	public $password;
@@ -31,6 +32,36 @@ class M_user extends CI_Model
 				'field' => 'retype_new_password',
 				'label' => 'Ulangi Password Baru',
 				'rules' => 'required|min_length[8]|matches[new_password]'
+			]
+		];
+	}
+
+	public function updateProfileRules()
+	{
+		return [
+
+			[
+				'field' => 'email',
+				'label' => 'Email',
+				'rules' => 'required|valid_email'
+			],
+
+			[
+				'field' => 'name',
+				'label' => 'Nama Lengkap',
+				'rules' => 'required'
+			],
+
+			[
+				'field' => 'username',
+				'label' => 'Username',
+				'rules' => 'required'
+			],
+
+			[
+				'field' => 'password',
+				'label' => 'Verifikasi Password',
+				'rules' => 'required'
 			]
 		];
 	}
@@ -64,7 +95,7 @@ class M_user extends CI_Model
 		return $query;
 	}
 
-	public function daftar($datauser)
+	public function register($datauser)
 	{
 		$this->db->insert($this->_table, $datauser);
 	}
@@ -87,17 +118,72 @@ class M_user extends CI_Model
 		return $query;
 	}
 
+	public function updateProfile()
+	{
+		$post = $this->input->post();
+		$this->id 			= $this->session->userdata('id');
+		$this->nama_lengkap = $post['name'];
+		$this->username 	= $post['username'];
+		$this->email 		= $post['email'];
+		$this->password 	= $this->session->userdata('password');
+		$this->level 		= $this->session->userdata('level');
+
+		if (!empty($_FILES["image"]["name"])) {
+			$this->image = $this->_uploadImage();
+		} else {
+			$this->image = $this->session->userdata('image');
+		}
+
+		$this->db->set('nama_lengkap', $this->nama_lengkap);
+		$this->db->set('username', $this->username);
+		$this->db->set('email', $this->email);
+		$this->db->set('image', $this->image);
+		$this->db->where('id', $this->id);
+		$this->db->update($this->_table);
+
+		$userdata = array(
+			'id' 			=> $this->id,
+			'nama_lengkap'	=> $this->nama_lengkap,
+			'username' 		=> $this->username,
+			'email' 		=> $this->email,
+			'password'		=> $this->password,
+			'level' 		=> $this->level,
+			'image' 		=> $this->image,
+		);
+
+		return $this->session->set_userdata($userdata);
+	}
+
 	public function updatePassword()
 	{
 		$post = $this->input->post();
 		$this->id 					= $this->session->userdata('id');
-		$this->old_password 			= md5($post['old_password']);
+		$this->old_password 		= md5($post['old_password']);
 		$this->new_password 		= md5($post['new_password']);
 		$this->retype_new_password 	= md5($post['retype_new_password']);
-		
+
 		$this->db->set('password', $this->new_password);
 		$this->db->where('id', $this->id);
 		return $this->db->update($this->_table);
+	}
+
+	private function _uploadImage()
+	{
+		$config['upload_path']          = './upload/profile/';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg';
+		$config['file_name']            = $this->id;
+		$config['overwrite']			= true;
+		$config['max_size']             = 10240; // 10MB
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload("image")) {
+			return $this->upload->data("file_name");
+		}
+		//print_r($this->upload->display_errors());
+		return "default.png";
 	}
 
 	public function checkPassword()

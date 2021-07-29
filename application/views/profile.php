@@ -5,7 +5,8 @@
 				<h2 class="u-custom-font u-font-arial u-text u-text-1">Your Profile</h2>
 			</div>
 		</div>
-		<div class="u-image u-image-circle u-image-1" alt="" data-image-width="1280" data-image-height="1280"></div>
+		<div class="u-image u-image-circle u-image-1" alt="" data-image-width="1280" data-image-height="1280" style="background-image: url(<?= base_url('upload/profile/').$this->session->userdata('image') ?>) ;">
+		</div>
 		<div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
 			<div class="u-layout">
 				<div class="u-layout-row">

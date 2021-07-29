@@ -13,7 +13,9 @@
 							<h2 class="u-align-center u-text u-text-1"><?php echo $products->nama_produk ?></h2>
 							<h4 class="u-align-center u-text u-text-2"><?php echo ("Rp. " . number_format($products->harga, 2, ",", ".")) ?></h4>
 							<h4 class="u-align-center u-text u-text-grey-50 u-text-3">TOXIC SHOCK</h4>
-							<p class="u-custom-font u-font-arial u-text u-text-4"><?php echo $products->deskripsi ?>
+							<center>
+								<p class="u-custom-font u-font-arial u-text u-text-4"><?php echo $products->deskripsi ?>
+							</center>
 							</p>
 						</div>
 					</div>
@@ -22,6 +24,7 @@
 		</div>
 	</div>
 </section>
+<!--
 <section class="u-align-center u-clearfix u-section-2" id="sec-6753">
 	<div class="u-clearfix u-sheet u-sheet-1">
 		<div class="u-gallery u-layout-horizontal u-lightbox u-show-text-on-hover u-width-fixed u-gallery-1" id="carousel-96c8">
@@ -94,3 +97,4 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 		</div>
 	</div>
 </section>
+-->

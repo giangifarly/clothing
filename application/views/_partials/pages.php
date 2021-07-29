@@ -10,37 +10,35 @@
 		</li>
 		<?php if ($this->session->userdata('id') > 0) { ?>
 			<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/event') ?>">EVENT</a>
-		<?php } ?>
-
-		</li>
-		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/store') ?>">STORE</a>
-		</li>
-		<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/about') ?>">ABOUT</a>
-		</li>
-		<?php if ($this->session->userdata('id') > 0) { ?>
-			<li class="u-nav-item">
-				<div class="dropdown">
-					<button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<b><?php echo $this->session->userdata('username'); ?></b>
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="<?php echo site_url('pages/profile') ?>">Profil</a>
-						<a class="dropdown-item btn-outline-danger" href="<?php echo site_url('user_control/logout') ?>">Log Out</a>
-					</div>
-				</div>
-			</li>
-
-			<?php if ($this->session->userdata('level') == 1) { ?>
-				<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('admin_pages/') ?>"><button class="btn btn-outline-info">Admin Dashboard</button></a>
-				</li>
 			<?php } ?>
 
-		<?php } else { ?>
-			<li class="u-nav-item">
-				<a class="btn btn-outline-dark btn-lg" href="<?php echo site_url('pages/login') ?>">LOG IN</a>
-				<a class="btn btn-dark btn-lg" href="<?php echo site_url('pages/register') ?>">REGISTER</a>
 			</li>
-		<?php } ?>
+			<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/store') ?>">STORE</a>
+			</li>
+			<li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?php echo site_url('pages/about') ?>">ABOUT</a>
+			</li>
+			<?php if ($this->session->userdata('id') > 0) { ?>
+				<li class="u-nav-item">
+					<div class="dropdown">
+						<button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<b><?php echo $this->session->userdata('nama_lengkap'); ?></b>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="<?php echo site_url('pages/profile') ?>">Profil</a>
+							<?php if ($this->session->userdata('level') == 1) { ?>
+								<a class="dropdown-item" href="<?php echo site_url('admin_pages/') ?>">Go To Admin Dashboard</a>
+							<?php } ?>
+							<a class="dropdown-item btn-outline-danger" href="<?php echo site_url('user_control/logout') ?>">Log Out</a>
+						</div>
+					</div>
+				</li>
+
+			<?php } else { ?>
+				<li class="u-nav-item">
+					<a class="btn btn-outline-dark btn-lg" href="<?php echo site_url('pages/login') ?>">LOG IN</a>
+					<a class="btn btn-dark btn-lg" href="<?php echo site_url('pages/register') ?>">REGISTER</a>
+				</li>
+			<?php } ?>
 
 	</ul>
 </div>

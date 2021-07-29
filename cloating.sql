@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2021 at 02:25 PM
+-- Generation Time: Jul 28, 2021 at 05:58 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -88,10 +88,9 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id`, `nama_produk`, `deskripsi`, `harga`, `kategori`, `featured`, `image`) VALUES
-('10', 'PSYK', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 1499000, 'Shirt', 0, 'default.png'),
-('11', 'Intorno', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 189000, 'Shirt', 0, '11.jpg'),
-('8', 'Death Bed', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 159900, 'Shirt', 0, '8.jpg'),
-('9', 'Magi', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 259900, 'Shirt', 0, 'default.png');
+('10', 'PSYK', 'Black 20s cotton short sleeve T-shirts, tubular fit, seamless double needle 2cm collar, taped neck and shoulders, satin & cotton label,\r\ndouble needle sleeve and bottom hem, white color plastisol ink screen print.', 1499000, 'Shirt', 1, 'default.png'),
+('6101101cc7751', 'Adjure', 'awdasdawsd', 159000, 'Shirt', 0, '6101101cc7751.jpg'),
+('61011e54e6c6e', 'Magi', 'djawhdkjashkjdwa', 359000, 'Sweatshirt', 0, '61011e54e6c6e.jpg');
 
 -- --------------------------------------------------------
 
@@ -101,22 +100,24 @@ INSERT INTO `produk` (`id`, `nama_produk`, `deskripsi`, `harga`, `kategori`, `fe
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `level` int(2) NOT NULL
+  `level` int(2) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `username`, `password`, `level`) VALUES
-(1, 'gifarlygian@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(3, 'ngajicode09@gmail.com', '10120278', '6f79c77fc078abbf894d619eed36e8c1', 2),
-(4, 'musikbecek@gmail.com', 'admin', '6f79c77fc078abbf894d619eed36e8c1', 2),
-(5, 'ajayblak09@gmail.com', 'ajay', '6f79c77fc078abbf894d619eed36e8c1', 2),
-(6, 'member@member.com', 'member', 'aa08769cdcb26674c6706093503ff0a3', 2);
+INSERT INTO `user` (`id`, `nama_lengkap`, `email`, `username`, `password`, `level`, `image`) VALUES
+(1, 'Gian Gifarly', 'gifarlygian@gmail.com', 'admin', '0192023a7bbd73250516f069df18b500', 1, 'default.png'),
+(3, 'Ini siapa', 'ngajicode09@gmail.com', '10120278', '6f79c77fc078abbf894d619eed36e8c1', 2, 'default.png'),
+(4, 'Musik Becek', 'musikbecek@gmail.com', 'admin', '6f79c77fc078abbf894d619eed36e8c1', 2, 'default.png'),
+(5, 'Ajay Belak', 'ajayblak09@gmail.com', 'ajay', '6f79c77fc078abbf894d619eed36e8c1', 2, 'default.png'),
+(6, 'Katanya Sih Member', 'member@member.com', 'member', 'aa08769cdcb26674c6706093503ff0a3', 2, 'default.png');
 
 --
 -- Indexes for dumped tables

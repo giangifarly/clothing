@@ -30,6 +30,7 @@ class Pages extends CI_Controller
     }
     public function event()
     {
+		$this->pagesRules();
         $data['judul'] = "Event";
 
         $this->load->view('_partials/header', $data);
@@ -65,6 +66,7 @@ class Pages extends CI_Controller
     }
     public function profile()
     {
+		$this->pagesRules();
         $data['judul'] = "Profile";
 
         $this->load->view('_partials/header', $data);
@@ -73,6 +75,7 @@ class Pages extends CI_Controller
     }
 	public function edit_profile()
     {
+		$this->pagesRules();
         $data['judul'] = "Edit Profile";
 
         $this->load->view('_partials/header', $data);
@@ -87,4 +90,11 @@ class Pages extends CI_Controller
     {
         $this->load->view('register');
     }
+
+	private function pagesRules()
+	{
+		if ($this->session->userdata('level') == 0) {
+			redirect('','refresh');
+		}
+	}
 }
