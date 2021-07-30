@@ -14,8 +14,6 @@ class Admin_pages extends MY_Controller
 		} elseif ($this->session->userdata('level') == 2) {
 			redirect('pages');
 		}
-
-		$this->load->model('m_product');
 	}
 
 	public function index()
@@ -28,6 +26,12 @@ class Admin_pages extends MY_Controller
 	{
 		$data['judul']  = 'Produk';
 		$this->render_admin('admin/produk', $data);
+	}
+
+	public function event()
+	{
+		$data['judul']  = 'Event';
+		$this->render_admin('admin/event', $data);
 	}
 
 	public function pengaturan()
@@ -72,71 +76,6 @@ class Admin_pages extends MY_Controller
 		redirect(site_url('admin_pages/produk'));
 	}
 
-
-	function fetch_produk()
-	{
-		$output = '';
-		$query = '';
-
-		if ($this->input->post('query')) {
-			$query = $this->input->post('query');
-		}
-		$data = $this->m_product->fetch_product($query);
-		$no = 1;
-		$output .= '
-	 	<div class="table-responsive">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>No</th>		  			
-		  				<th>Nama Produk</th>
-						<th>Kategori</th>
-						<th>Harga</th>
-						<th>Ketersediaan Gambar Produk</th>
-						<th colspan="3">Option Tambahan</th>
-		 			</tr>
-				</thead>
-	 	';
-		if ($data->num_rows() > 0) {
-			foreach ($data->result() as $row) {
-
-				if ($row->image == null || $row->image == 'default.png') {
-					$gambar = "Tidak Ada";
-				} else {
-					$gambar = "Ada";
-				}
-				
-
-				if ($row->featured == 0) {
-					$featured = anchor('admin_pages/turnOnFeatured/' . $row->id, 'Aktifkan Featured', "class='badge badge-success'");
-				} else {
-					$featured = anchor('admin_pages/turnOffFeatured/' . $row->id, 'Matikan Featured', "class='badge badge-danger'");
-				}
-
-				$output .= '
-				<tbody>
-				 <tr>
-				 	<td>' . $no . '</td>
-		  			<td>' . $row->nama_produk . '</td>
-					<td>' . $row->kategori . '</td>
-					<td>' . $row->harga . '</td>
-					<td>' . $gambar . '</td>
-					<td>' . $featured . '</td>
-					<td>' . anchor('admin_pages/produkUpdate/' . $row->id, 'Edit') . '</td>
-					<td>' . anchor('admin_pages/delete/' . $row->id, 'Hapus') . '</td>
-				</tr>
-				</tbody>
-			   ';
-				$no++;
-			}
-		} else {
-			$output .= '<tr>
-		  <td colspan="5">No Data Found</td>
-		 </tr>';
-		}
-		$output .= '</table></div>';
-		echo $output;
-	}
 
 	public function turnOnFeatured($id = null)
 	{

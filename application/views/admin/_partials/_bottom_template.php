@@ -32,7 +32,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<?=$this->session->flashdata('notif')?>
+<?= $this->session->flashdata('notif') ?>
 
 <script src="<?php echo base_url('assets/bower_components') ?>/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
@@ -52,7 +52,9 @@
 		load_data();
 		<?php
 		if ($this->uri->segment(2) == 'produk') {
-			$site = site_url('admin_pages/fetch_produk');
+			$site = site_url('C_FetchData/fetch_produk');
+		} elseif ($this->uri->segment(2) == 'event') {
+			$site = site_url('C_FetchData/fetch_event');
 		}
 		?>
 
@@ -76,6 +78,35 @@
 			} else {
 				load_data();
 			}
+		});
+
+		$('#modelEditKategori').on('show.bs.modal', function(event) {
+			var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+			var modal = $(this)
+
+			// Isi nilai pada field
+			modal.find('#id').attr("value", div.data('id'));
+			modal.find('#kategori').attr("value", div.data('kategori'));
+		});
+
+		$('#modelEditEvent').on('show.bs.modal', function(event) {
+			var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
+			var modal = $(this)
+
+			// Isi nilai pada field
+			modal.find('#id').attr("value", div.data('id'));
+			modal.find('#kategori').attr("value", div.data('kategori'));
+			modal.find('#diskon').attr("value", div.data('diskon'));
+
+			function previewImageEdit() {
+				document.getElementById("image-preview").style.display = "block";
+				var oFReader = new FileReader();
+				oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+
+				oFReader.onload = function(oFREvent) {
+					document.getElementById("image-preview").src = oFREvent.target.result;
+				};
+			};
 		});
 
 	});
