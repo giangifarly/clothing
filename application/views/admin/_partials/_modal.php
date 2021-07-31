@@ -96,15 +96,11 @@ foreach ($list_event as $e) :
 							<label class="bmd-label-floating">Jumlah Diskon (Dalam Persen)</label>
 							<input type="number" class="form-control" name="diskon" placeholder="Contoh : 50 (untuk 50%)" value="<?= $diskon ?>">
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label>Deskripsi Event</label>
-									<div class="form-group">
-										<label class="bmd-label-floating"></label>
-										<textarea class="form-control" rows="5" name="deskripsi" style="height: 150px;"><?= $deskripsi ?></textarea>
-									</div>
-								</div>
+						<div class="form-group">
+							<div class="form-group">
+								<label>Deskripsi Event</label>
+								<label class="bmd-label-floating"></label>
+								<textarea class="form-control" rows="5" name="deskripsi" style="height: 150px;"><?= $deskripsi ?></textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -112,8 +108,20 @@ foreach ($list_event as $e) :
 							<input type="hidden" name="old_image" value="<?= $image ?>">
 						</div>
 						<div class="form-group">
-							<label>Tambah Gambar Event</label>
+							<label for="event_status">Status Event</label>
+							<select class="form-control" name="event_status">
+								<?php if ($event_status == 0) : ?>
+									<option value="0" selected>Tidak Aktif</option>
+									<option value="1">Aktif</option>
+								<?php elseif ($event_status == 1) : ?>
+									<option value="0">Tidak Aktif</option>
+									<option value="1" selected>Aktif</option>
+								<?php endif ?>
+							</select>
+						</div>
+						<div class="form-group">
 							<div class="form-group">
+								<label>Tambah Gambar Event</label>
 								<label class="bmd-label-floating"></label>
 								<div class="input-group">
 									<input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" id="image-source">
@@ -121,7 +129,6 @@ foreach ($list_event as $e) :
 								<small id="helpId" class="text-muted"></small>
 							</div>
 						</div>
-						<div class="clearfix"></div>
 
 					</div>
 					<div class="modal-footer">

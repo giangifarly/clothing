@@ -70,7 +70,6 @@
 								</tbody>
 							</table>
 						</div>
-						<?php include "_partials/_modal.php" ?>
 					</div>
 				</div>
 			</div>

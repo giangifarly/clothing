@@ -14,6 +14,11 @@ class Admin_pages extends MY_Controller
 		} elseif ($this->session->userdata('level') == 2) {
 			redirect('pages');
 		}
+
+		$this->load->model('m_product');
+		$this->load->model('m_kategori');
+		$this->load->model('m_user');
+		$this->load->model('m_event');
 	}
 
 	public function index()
@@ -74,6 +79,19 @@ class Admin_pages extends MY_Controller
 		}
 
 		redirect(site_url('admin_pages/produk'));
+	}
+
+	public function view_event($id = null)
+	{
+		$data['judul']  = 'Lihat Event';
+
+		//if (!isset($id)) redirect('admin_pages/produk');
+
+		$event = $this->m_event;
+		$data["event"] = $event->getById($id);
+		if (!$data["event"]) show_404();
+
+		$this->render_admin('admin/view_event', $data);
 	}
 
 

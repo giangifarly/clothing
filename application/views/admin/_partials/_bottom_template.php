@@ -1,3 +1,4 @@
+<?php include "_modal.php" ?>
 <!-- main-panel ends -->
 </div>
 <!-- page-body-wrapper ends -->
@@ -45,8 +46,16 @@
 			document.getElementById("image-preview").src = oFREvent.target.result;
 		};
 	};
-</script>
-<script type="text/javascript">
+
+	function previewImageEdit() {
+		document.getElementById("image-preview").style.display = "block";
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+
+		oFReader.onload = function(oFREvent) {
+		};
+	};
+
 	$(document).ready(function() {
 
 		load_data();
@@ -79,36 +88,6 @@
 				load_data();
 			}
 		});
-
-		$('#modelEditKategori').on('show.bs.modal', function(event) {
-			var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-			var modal = $(this)
-
-			// Isi nilai pada field
-			modal.find('#id').attr("value", div.data('id'));
-			modal.find('#kategori').attr("value", div.data('kategori'));
-		});
-
-		$('#modelEditEvent').on('show.bs.modal', function(event) {
-			var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-			var modal = $(this)
-
-			// Isi nilai pada field
-			modal.find('#id').attr("value", div.data('id'));
-			modal.find('#kategori').attr("value", div.data('kategori'));
-			modal.find('#diskon').attr("value", div.data('diskon'));
-
-			function previewImageEdit() {
-				document.getElementById("image-preview").style.display = "block";
-				var oFReader = new FileReader();
-				oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
-
-				oFReader.onload = function(oFREvent) {
-					document.getElementById("image-preview").src = oFREvent.target.result;
-				};
-			};
-		});
-
 	});
 </script>
 <!-- End custom js for this page-->

@@ -31,9 +31,9 @@ class M_Event extends CI_Model
 	}
 
 	public function getById($id)
-	{
-		return $this->db->get_where($this->_table, ["id" => $id])->row();
-	}
+    {
+        return $this->db->get_where($this->_table, ["id" => $id])->row();
+    }
 
 	public function save()
 	{

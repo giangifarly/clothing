@@ -23,15 +23,11 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Deskripsi Event</label>
-											<div class="form-group">
-												<label class="bmd-label-floating"></label>
-												<textarea class="form-control" rows="5" name="deskripsi" style="height: 150px;"></textarea>
-											</div>
-										</div>
+								<div class="form-group">
+									<label>Deskripsi Event</label>
+									<div class="form-group">
+										<label class="bmd-label-floating"></label>
+										<textarea class="form-control" rows="5" name="deskripsi" style="height: 150px;"></textarea>
 									</div>
 								</div>
 							</div>
@@ -102,7 +98,6 @@
 				</div>
 			</div>
 		</div>
-		<?php include "_partials/_modal.php" ?>
 	</div>
 	<?php include "_partials/footer.php" ?>
 </div>

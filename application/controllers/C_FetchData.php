@@ -104,7 +104,7 @@ class C_FetchData extends CI_Controller {
 	 	';
 		if ($data->num_rows() > 0) {
 			foreach ($data->result() as $row) {
-				$event = "<a href='#'>".$row->event."</a>";
+				$event = "<a href='".site_url('admin_pages/view_event/').$row->id."'>".$row->event."</a>";
 				$update = '<button class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#modelEditEvent'.$row->id.'">Edit</button>';
 				$delete = '<a href="'.site_url('c_event/delete/').$row->id.'" class="btn btn-outline-danger btn-sm">Delete</a>';
 

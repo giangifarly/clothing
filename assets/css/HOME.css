@@ -305,7 +305,7 @@
     width: 340px;
   }
 }.u-section-3 .u-sheet-1 {
-  min-height: 865px;
+  min-height: 450px;
 }
 
 .u-section-3 .u-text-1 {
@@ -328,7 +328,7 @@
 
 .u-section-3 .u-repeater-1 {
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
-  min-height: 804px;
+  min-height: 382px;
   grid-gap: 0px 0px;
 }
 
