@@ -1,7 +1,7 @@
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="row flex-grow">
-			<div class="col-md-5 grid-margin stretch-card">
+			<div class="col-md-3 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Ganti Password</h4>
@@ -23,6 +23,53 @@
 							</div>
 							<button type="submit" class="btn btn-primary me-2">Ganti Password</button>
 						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<div class="d-sm-flex justify-content-between align-items-start">
+							<div>
+								<h4 class="card-title">List Kategori</h4>
+								<p class="card-description"></p>
+							</div>
+							<div>
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelKategori">
+										Tambah Kategori
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Kategori</th>
+										<th>Opsi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									$no = 1;
+									foreach ($list_kategori as $k) { ?>
+										<tr>
+											<td><?= $no ?></td>
+											<td><?= $k->kategori ?></td>
+											<td>
+												<button class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#modelEditKategori<?= $k->id ?>">Edit</button>
+												<a href="<?= site_url('c_kategori/delete/') . $k->id ?>"><button class="btn btn-outline-danger btn-sm">Hapus</button></a>
+											</td>
+										</tr>
+									<?php $no++;
+									} ?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>

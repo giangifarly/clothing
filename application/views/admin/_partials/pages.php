@@ -20,6 +20,16 @@
 </li>
 
 <li class="nav-item ">
+
+	<a class="nav-link" href="<?php echo site_url('admin_pages/event') ?>">
+		<i class="mdi mdi-cart menu-icon"></i>
+		<span class="menu-title">Event</span>
+	</a>
+</li>
+
+<li class="nav-item nav-category">Pengaturan</li>
+
+<li class="nav-item ">
 	<a class="nav-link" href="<?php echo site_url('admin_pages/pengaturan') ?>">
 		<i class="mdi mdi-settings menu-icon"></i>
 		<span class="menu-title">Pengaturan</span>

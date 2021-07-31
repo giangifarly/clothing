@@ -1,3 +1,4 @@
+<?php include "_modal.php" ?>
 <!-- main-panel ends -->
 </div>
 <!-- page-body-wrapper ends -->
@@ -32,7 +33,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<?=$this->session->flashdata('notif')?>
+<?= $this->session->flashdata('notif') ?>
 
 <script src="<?php echo base_url('assets/bower_components') ?>/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
@@ -45,14 +46,25 @@
 			document.getElementById("image-preview").src = oFREvent.target.result;
 		};
 	};
-</script>
-<script type="text/javascript">
+
+	function previewImageEdit() {
+		document.getElementById("image-preview").style.display = "block";
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+
+		oFReader.onload = function(oFREvent) {
+			document.getElementById("image-preview").src = oFREvent.target.result;
+		};
+	};
+
 	$(document).ready(function() {
 
 		load_data();
 		<?php
 		if ($this->uri->segment(2) == 'produk') {
-			$site = site_url('admin_pages/fetch_produk');
+			$site = site_url('C_FetchData/fetch_produk');
+		} elseif ($this->uri->segment(2) == 'event') {
+			$site = site_url('C_FetchData/fetch_event');
 		}
 		?>
 
@@ -77,7 +89,6 @@
 				load_data();
 			}
 		});
-
 	});
 </script>
 <!-- End custom js for this page-->
