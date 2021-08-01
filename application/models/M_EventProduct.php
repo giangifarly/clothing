@@ -9,6 +9,7 @@ class M_EventProduct extends CI_Model
 	private $_table_event = 'event';
 	private $_table_produk = 'produk';
 	private $_table_joined = 'event_product,event,produk';
+	private $_table_select_by_id = 'event_product,event,produk';
 
 
 	public $id;
@@ -47,11 +48,46 @@ class M_EventProduct extends CI_Model
 
 	public function getById($id)
 	{
+		$this->db->select(
+			'
+			produk.id as id, 
+			produk.nama_produk as nama_produk, 
+			produk.deskripsi as deskripsi,
+			produk.image as image,
+			produk.harga as harga,
+			event.diskon as diskon
+			'
+		);
 		$this->db->from($this->_table);
 		$this->db->join('event','`event_product`.`id_event` = `event`.`id`', 'left');
 		$this->db->join('produk','`event_product`.`id_produk` = `produk`.`id`', 'left');
 
-		$this->db->where('id_event',$id);
+		$this->db->where('event_product.id_event',$id);
+		$this->db->order_by('nama_produk', 'asc');
+		
+
+		return $this->db->get();
+	}
+
+	public function getProductById($id)
+	{
+		$this->db->select(
+			'
+			produk.id as id, 
+			produk.nama_produk as nama_produk, 
+			produk.deskripsi as deskripsi,
+			produk.image as image,
+			produk.harga as harga,
+			event.diskon as diskon
+			'
+		);
+		$this->db->from($this->_table);
+		$this->db->join('event','`event_product`.`id_event` = `event`.`id`', 'left');
+		$this->db->join('produk','`event_product`.`id_produk` = `produk`.`id`', 'left');
+
+		$this->db->where('event_product.id_produk',$id);
+		$this->db->order_by('nama_produk', 'asc');
+		
 
 		return $this->db->get();
 	}
@@ -80,7 +116,7 @@ class M_EventProduct extends CI_Model
 
 	public function delete($id)
 	{
-		return $this->db->delete($this->_table, array('id' => $id));
+		return $this->db->delete($this->_table, array('id_produk' => $id));
 	}
 
 	public function fetch_eventProduct($query)
@@ -96,8 +132,6 @@ class M_EventProduct extends CI_Model
 			$this->db->like('produk.nama_produk', $query);
 		}
 		
-		$this->db->where('event_product.id_produk = produk.id');
-		$this->db->where('event_product.id_event = event.id');
 		$this->db->where('event_product.id_event', $id);
 
 		$this->db->order_by('produk.nama_produk', 'asc');

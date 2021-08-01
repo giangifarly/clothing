@@ -30,6 +30,15 @@ class M_Event extends CI_Model
 		return $this->db->get($this->_table);
 	}
 
+	public function getAllStatusOn()
+	{
+		return $this->db->get_where($this->_table,["event_status"=> '1']);
+	}
+	public function getAllStatusOff()
+	{
+		return $this->db->get_where($this->_table,["event_status"=> '0']);
+	}
+
 	public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id" => $id])->row();

@@ -2,97 +2,37 @@
 	<div class="u-clearfix u-layout-wrap u-layout-wrap-1">
 		<div class="u-layout">
 			<div class="u-layout-row">
-				<div class="u-align-center-sm u-align-center-xs u-align-right-lg u-align-right-md u-align-right-xl u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
-					<div class="u-container-layout u-container-layout-1">
-						<h3 class="u-text u-text-body-color u-text-default u-text-1">last chance</h3>
-						<h1 class="u-text u-text-black u-text-default u-text-2">70%<br>
-						</h1>
-						<h2 class="u-text u-text-body-color u-text-default u-text-3">off all</h2>
-						<p class="u-text u-text-body-color u-text-default u-text-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-						<a href="https://nicepage.com/k/announcement-html-templates" class="u-active-none u-border-10 u-border-black u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-1">start now</a>
-					</div>
-				</div>
-				<div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
-					<div class="u-container-layout u-container-layout-2">
-						<div class="u-carousel u-carousel-duration-500 u-expanded-width-xs u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" id="carousel-f035" data-interval="5000" data-u-ride="carousel">
-							<ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-								<li data-u-target="#carousel-f035" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-								<li data-u-target="#carousel-f035" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-								<li data-u-target="#carousel-f035" data-u-slide-to="2" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-							</ol>
-							<div class="u-carousel-inner u-gallery-inner" role="listbox">
-								<div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1">
-									<div class="u-back-slide" data-image-width="1080" data-image-height="1080">
-										<img class="u-back-image u-expanded" src="<?php echo base_url('assets') ?>/images/adjure-1.jpg">
-									</div>
-									<div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-1">
-										<h3 class="u-gallery-heading">Special Price</h3>
-										<p class="u-gallery-text">Rp 50.700</p>
-									</div>
-								</div>
-								<div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
-									<div class="u-back-slide" data-image-width="1080" data-image-height="1080">
-										<img class="u-back-image u-expanded" src="<?php echo base_url('assets') ?>/images/conbird-1.jpg">
-									</div>
-									<div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
-										<h3 class="u-gallery-heading">Special Price</h3>
-										<p class="u-gallery-text">Rp 50.700</p>
-									</div>
-								</div>
-								<div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3" data-image-width="1080" data-image-height="1080">
-									<div class="u-back-slide">
-										<img class="u-back-image u-expanded" src="<?php echo base_url('assets') ?>/images/deathbed-1.jpg">
-									</div>
-									<div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
-										<h3 class="u-gallery-heading">Special Price</h3>
-										<p class="u-gallery-text">Rp 50.700</p>
-									</div>
-									<div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-3">
-										<h3 class="u-gallery-heading"></h3>
-										<p class="u-gallery-text"></p>
-									</div>
-									<style data-mode="XL"></style>
-									<style data-mode="LG"></style>
-									<style data-mode="MD"></style>
-									<style data-mode="SM"></style>
-									<style data-mode="XS"></style>
-								</div>
-							</div>
-							<a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-hidden-sm u-hidden-xs u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-f035" role="button" data-u-slide="prev">
-								<span aria-hidden="true">
-									<svg viewBox="0 0 451.847 451.847">
-										<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
-									</svg>
-								</span>
-								<span class="sr-only">
-									<svg viewBox="0 0 451.847 451.847">
-										<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
-									</svg>
-								</span>
-							</a>
-							<a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-hidden-sm u-hidden-xs u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-f035" role="button" data-u-slide="next">
-								<span aria-hidden="true">
-									<svg viewBox="0 0 451.846 451.847">
-										<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
-									</svg>
-								</span>
-								<span class="sr-only">
-									<svg viewBox="0 0 451.846 451.847">
-										<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
-									</svg>
-								</span>
-							</a>
+				<?php foreach ($event as $e) : ?>
+					<div class="u-align-center-sm u-align-center-xs u-align-right-lg u-align-right-md u-align-right-xl u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+						<div class="u-container-layout u-container-layout-1">
+							<h3 class="u-text u-text-body-color u-text-default u-text-1"><?= $e->event ?></h3>
+							<h1 class="u-text u-text-black u-text-default u-text-2"><?= $e->diskon ?>%<br>
+							</h1>
+							<h2 class="u-text u-text-body-color u-text-default u-text-3">off all</h2>
+							<p class="u-text u-text-body-color u-text-default u-text-4"><?= $e->deskripsi ?></p>
+							<a href="<?= site_url('pages/view_event_product/').$e->id ?>" class="u-active-none u-border-10 u-border-black u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-1">Lihat Produk</a>
 						</div>
 					</div>
-				</div>
+
+					<div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+						<div class="u-container-layout u-container-layout-2">
+							<div class="u-carousel u-carousel-duration-500 u-expanded-width-xs u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" id="carousel-f035" data-interval="5000" data-u-ride="carousel">
+								<div class="u-carousel-inner u-gallery-inner" role="listbox">
+									<div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1">
+										<div class="u-back-slide" data-image-width="1080" data-image-height="1080">
+											<img class="u-back-image u-expanded" src="<?php echo base_url('upload/event/') ?><?= $e->image ?>">
+										</div>
+										<div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-1">
+											<h3 class="u-gallery-heading"></h3>
+											<p class="u-gallery-text"></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
@@ -102,27 +42,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 		<h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">COMINGSOON</h3>
 		<div class="u-list u-list-1">
 			<div class="u-repeater u-repeater-1">
-				<div class="u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-container-layout-1">
-						<img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="150" data-image-height="150" src="<?php echo base_url('assets') ?>/images/black-friday.png">
-						<h3 class="u-text u-text-default u-text-2">Black Friday Sale</h3>
-						<p class="u-text u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+				<?php foreach ($comingsoon as $c) : ?>
+					<div class="u-container-style u-list-item u-repeater-item">
+						<div class="u-container-layout u-similar-container u-container-layout-1">
+							<img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="150" data-image-height="150" src="<?php echo base_url('upload/event/').$c->image ?>">
+							<h3 class="u-text u-text-default u-text-2"><?= $c->event ?></h3>
+							<p class="u-text u-text-3"><?= $c->deskripsi ?>.</p>
+						</div>
 					</div>
-				</div>
-				<div class="u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-container-layout-2">
-						<img alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="1024" data-image-height="1024" src="<?php echo base_url('assets') ?>/images/aa.jpg">
-						<h3 class="u-text u-text-default u-text-4">Mid Year Sale</h3>
-						<p class="u-text u-text-5">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-					</div>
-				</div>
-				<div class="u-container-style u-list-item u-repeater-item">
-					<div class="u-container-layout u-similar-container u-container-layout-3">
-						<img alt="" class="u-expanded-width u-image u-image-default u-image-3" data-image-width="800" data-image-height="738" src="<?php echo base_url('assets') ?>/images/summer-sale.png">
-						<h3 class="u-text u-text-default u-text-6">Summer Sale</h3>
-						<p class="u-text u-text-7">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
