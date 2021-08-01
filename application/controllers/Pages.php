@@ -97,6 +97,16 @@ class Pages extends CI_Controller
         $this->load->view('profile', $data);
         $this->load->view('_partials/footer');
     }
+
+    public function cart()
+    {
+		$this->pagesRules();
+        $data['judul'] = "Keranjang";
+
+        $this->load->view('_partials/header', $data);
+        $this->load->view('cart', $data);
+        $this->load->view('_partials/footer');
+    }
 	public function edit_profile()
     {
 		$this->pagesRules();
