@@ -8,8 +8,8 @@
 	}
 	?>
 	<div class="content-wrapper">
-		<div class="row">
-			<div class="col-sm-8">
+		<div class="row flex-grow">
+			<div class="col-sm-8 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title "><?= $judul ?></h4>
@@ -44,7 +44,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#modelEditEvent<?= $event->id ?>">Edit Event</button>
+									<button class="btn btn-success pull-right" data-toggle="modal" data-target="#modelEditEvent<?= $event->id ?>">Edit Event</button>
 								</div>
 							</div>
 							<div class="col-sm-3">
@@ -53,6 +53,34 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="d-sm-flex justify-content-between align-items-start">
+							<div>
+								<h4 class="card-title">List Produk</h4>
+								<p class="card-text">List Produk yang masuk dalam event <?= $event->event ?></p>
+							</div>
+							<div>
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="search_text" id="search_text" placeholder="Cari Berdasarkan Nama Produk" class="form-control" />
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="form-group">
+									<div class="input-group">
+										<button class="btn btn-primary" data-toggle="modal" data-target="#modelEventProduk">Tambah Event Produk</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="result"></div>
 					</div>
 				</div>
 			</div>

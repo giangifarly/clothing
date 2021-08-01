@@ -61,10 +61,14 @@
 
 		load_data();
 		<?php
+		$id = $this->uri->segment(3);
+
 		if ($this->uri->segment(2) == 'produk') {
 			$site = site_url('C_FetchData/fetch_produk');
 		} elseif ($this->uri->segment(2) == 'event') {
 			$site = site_url('C_FetchData/fetch_event');
+		}elseif ($this->uri->segment(2) == 'view_event') {
+			$site = site_url('C_FetchData/fetch_eventProduk/'.$id);
 		}
 		?>
 

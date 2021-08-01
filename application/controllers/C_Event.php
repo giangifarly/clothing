@@ -9,6 +9,7 @@ class C_Event extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_event');
+		$this->load->model('m_eventproduct');
 	}
 	
 	public function add()
@@ -62,6 +63,45 @@ class C_Event extends CI_Controller
 		if (!isset($id)) show_404();
 		if ($this->m_event->updateStatusOff($id)) {
 			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Status berhasil di-nonaktifkan!', 'success');</script>");
+			redirect(site_url('admin_pages/event'));
+		}
+	}
+
+	//Function untuk Produk yang masuk dalam suatu Event
+	public function addProductEvent()
+	{
+		$ep = $this->m_eventproduct;
+		$validation = $this->form_validation;
+		$validation->set_rules($ep->rules());
+
+		if ($validation->run()) {
+			$ep->save();
+			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil disimpan!', 'success');</script>");
+		}
+
+		redirect(site_url('admin_pages/event'));
+	}
+
+	public function updateProductEvent()
+	{
+		$ep = $this->m_eventproduct;
+		$validation = $this->form_validation;
+		$validation->set_rules($ep->rules());
+
+		if ($validation->run()) {
+			$ep->update();
+			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil diubah!', 'success');</script>");
+		}
+
+		redirect(site_url('admin_pages/event'));
+	}
+
+	public function deleteProductEvent($id = null)
+	{
+		if (!isset($id)) show_404();
+
+		if ($this->m_eventproduct->delete($id)) {
+			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil dihapus!', 'success');</script>");
 			redirect(site_url('admin_pages/event'));
 		}
 	}

@@ -10,6 +10,9 @@ class MY_Controller extends CI_Controller
 		$this->load->model('m_kategori');
 		$this->load->model('m_user');
 		$this->load->model('m_event');
+		$this->load->model('m_eventproduct');
+
+		$id = $this->uri->segment(3);
 
 		$data['error'] 			= '';
 		$data['username'] 		= $this->session->userdata('username');
@@ -21,6 +24,7 @@ class MY_Controller extends CI_Controller
 		$data['list_kategori']	= $this->m_kategori->getAll()->result();
 
 		$data['list_event']		= $this->m_event->getAll()->result();
+
 
 		$data['header'] 		= $this->load->view('admin/_partials/_top_template',$data);
 		$data['content'] 		= $this->load->view($content, $data);
