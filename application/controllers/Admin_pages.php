@@ -19,6 +19,7 @@ class Admin_pages extends MY_Controller
 		$this->load->model('m_kategori');
 		$this->load->model('m_user');
 		$this->load->model('m_event');
+		$this->load->model('m_eventproduct');
 	}
 
 	public function index()
@@ -88,7 +89,9 @@ class Admin_pages extends MY_Controller
 		//if (!isset($id)) redirect('admin_pages/produk');
 
 		$event = $this->m_event;
+		$eventproduct = $this->m_eventproduct;
 		$data["event"] = $event->getById($id);
+		$data["eventproduct"] = $eventproduct->getById($id)->result();
 		if (!$data["event"]) show_404();
 
 		$this->render_admin('admin/view_event', $data);

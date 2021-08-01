@@ -141,3 +141,44 @@ foreach ($list_event as $e) :
 	</div>
 <?php endforeach; ?>
 <!-- END Modal Edit Event -->
+
+<!-- START Modal Kategori -->
+<?php foreach ($list_event as $e) :
+	$id = $e->id;
+	$diskon = $e->diskon;
+?>
+<div class="modal fade" id="modelEventProduk" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<form action="<?= site_url('c_event/addProductEvent') ?>" method="post">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Tambah Kategori</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="">Masukkan Produk yang akan masuk dalam event</label>
+						<select class="form-control" name="id_produk">
+							<option>Pilih Produk</option>
+							<?php foreach ($list_produk as $p) { ?>
+								<option value="<?php echo $p->id ?>"><?php echo $p->nama_produk ?></option>
+							<?php } ?>
+						</select>
+						<input type="hidden" name="id_event" value="<?= $id ?>">
+						<input type="hidden" name="diskon" value="<?= $diskon ?>">
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<?php endforeach; ?>
+<!-- END Modal Kategori -->

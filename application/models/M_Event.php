@@ -109,7 +109,7 @@ class M_Event extends CI_Model
 		$product = $this->getById($id);
 		if ($product->image != "default.png") {
 			$filename = explode(".", $product->image)[0];
-			return array_map('unlink', glob(FCPATH . "upload/$filename.*"));
+			return array_map('unlink', glob(FCPATH . "upload/event/$filename.*"));
 		}
 	}
 
