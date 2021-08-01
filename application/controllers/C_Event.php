@@ -70,6 +70,8 @@ class C_Event extends CI_Controller
 	//Function untuk Produk yang masuk dalam suatu Event
 	public function addProductEvent()
 	{
+		$id = $this->uri->segment(3);
+		
 		$ep = $this->m_eventproduct;
 		$validation = $this->form_validation;
 		$validation->set_rules($ep->rules());
@@ -79,11 +81,12 @@ class C_Event extends CI_Controller
 			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil disimpan!', 'success');</script>");
 		}
 
-		redirect(site_url('admin_pages/event'));
+		redirect(site_url('admin_pages/view_event/'.$id));
 	}
 
 	public function updateProductEvent()
 	{
+		$id = $this->uri->segment(3);
 		$ep = $this->m_eventproduct;
 		$validation = $this->form_validation;
 		$validation->set_rules($ep->rules());
@@ -93,7 +96,7 @@ class C_Event extends CI_Controller
 			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil diubah!', 'success');</script>");
 		}
 
-		redirect(site_url('admin_pages/event'));
+		redirect(site_url('admin_pages/view_event/'.$id));
 	}
 
 	public function deleteProductEvent($id = null)
@@ -102,7 +105,7 @@ class C_Event extends CI_Controller
 
 		if ($this->m_eventproduct->delete($id)) {
 			$this->session->set_flashdata('notif', "<script>swal('Berhasil!', 'Data berhasil dihapus!', 'success');</script>");
-			redirect(site_url('admin_pages/event'));
+			redirect(site_url('admin_pages/view_event/'));
 		}
 	}
 }

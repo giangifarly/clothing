@@ -7,6 +7,8 @@ class Pages extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_product');
+        $this->load->model('m_event');
+        $this->load->model('m_eventproduct');
         $this->load->library('form_validation');
     }
 
@@ -32,9 +34,31 @@ class Pages extends CI_Controller
     {
 		$this->pagesRules();
         $data['judul'] = "Event";
+        $data['event'] = $this->m_event->getAllStatusOn()->result();
+        $data['comingsoon'] = $this->m_event->getAllStatusOff()->result();
 
         $this->load->view('_partials/header', $data);
         $this->load->view('event', $data);
+        $this->load->view('_partials/footer');
+    }
+    public function view_event_product($id)
+    {
+		$this->pagesRules();
+        $data['judul'] = "Lihat Event";
+		$data['products'] = $this->m_eventproduct->getById($id)->result();
+
+        $this->load->view('_partials/header', $data);
+        $this->load->view('view_event_product', $data);
+        $this->load->view('_partials/footer');
+    }
+    public function view_event_product_description($id)
+    {
+		$this->pagesRules();
+        $data['judul'] = "Lihat Event";
+		$data['products'] = $this->m_eventproduct->getProductById($id)->result();
+
+        $this->load->view('_partials/header', $data);
+        $this->load->view('view_event_product_description', $data);
         $this->load->view('_partials/footer');
     }
     public function about()
