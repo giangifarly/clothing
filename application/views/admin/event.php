@@ -53,6 +53,7 @@
 					</div>
 				</div>
 			</div>
+			<!--
 			<div class="col-sm-3 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
@@ -74,7 +75,7 @@
 					</div>
 				</div>
 			</div>
-
+									-->
 			<div class="col-sm-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">

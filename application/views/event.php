@@ -55,6 +55,7 @@
 		</div>
 	</div>
 </section>
+<!--
 <section class="u-align-center u-clearfix u-palette-2-base u-section-3" id="carousel_4a18">
 	<div class="u-clearfix u-sheet u-sheet-1">
 		<h2 class="u-text u-text-1">Cek terus media sosal kami untuk mendapat udate sale terbaru !</h2>
@@ -134,6 +135,8 @@
 		</div>
 	</div>
 </section>
+-->
+
 <style class="u-overlap-style">
 	.u-overlap:not(.u-sticky-scroll) .u-header {
 		background-color: #ffffff !important
